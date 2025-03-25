@@ -1,7 +1,7 @@
 // src\app\page.jsx
 
-import CategoriesPage from "./categories/page";
+import Home from "./home/page";
 
-export default async function Home() {
-  return <CategoriesPage />;
+export default async function App() {
+  return <Home />;
 }
