@@ -5,8 +5,10 @@
 
 @import "tailwindcss";
 
+@import "./pages/home.css";
+
+
 :root {
-  /* Colors */
   --background-color: hsl(210, 89%, 7%, 1);
   --primary-font-color: hsla(53, 82%, 66%, 1);
   --secondary-font-color: hsla(335, 100%, 66%, 1);
@@ -29,7 +31,6 @@
   }
 }
 
-/* Additional base styles (if needed) */
 @base {
   /* You can add resets or element-specific base styles here if desired */
 }
@@ -39,33 +40,3 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Home page */
-@utility home-page {
-  @apply container mx-auto p-4;
-}
-
-@utility main-heading {
-  @apply text-3xl font-bold mb-4;
-}
-
-@utility cards-grid {
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
-}
-
-
-/* Card component */
-@utility card {
-  @apply block border p-4 hover:shadow-lg;
-}
-
-@utility card-pic-frame {
-  @apply relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80;
-}
-
-@utility card-title {
-  @apply mt-2 text-xl;
-}
-/* ======== */
-
-/* ======== */

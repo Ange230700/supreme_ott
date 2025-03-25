@@ -1,0 +1,17 @@
+/* src/app/styles/home.css */
+
+/* Import the movie card styles */
+@import "../components/movie_card.css";
+
+/* Home page utilities */
+@utility home-page {
+  @apply container mx-auto p-4;
+}
+
+@utility main-heading {
+  @apply text-3xl font-bold mb-4;
+}
+
+@utility cards-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
+}
