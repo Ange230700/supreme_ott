@@ -18,13 +18,12 @@ export default async function Home() {
             href={`/movies/${film.id}`}
             className="block border p-4 hover:shadow-lg"
           >
-            <div className="relative w-full h-48">
+            <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
               <Image
                 src={film.cover_url}
                 alt={film.title}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: "cover" }}
+                className="object-cover"
                 priority={true}
               />
             </div>
