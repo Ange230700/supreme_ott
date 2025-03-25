@@ -1,6 +1,6 @@
 // src/app/categories/page.jsx
 
-import MovieCard from "../components/MovieCard";
+import MovieCarousel from "../components/MovieCarousel";
 
 export default async function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -20,17 +20,34 @@ export default async function Home() {
     })
   );
 
+  const responsiveOptions = [
+    {
+      breakpoint: '1400px',
+      numVisible: 5,
+      numScroll: 2,
+    },
+    {
+      breakpoint: '1024px',
+      numVisible: 4,
+      numScroll: 2,
+    },
+    {
+      breakpoint: '768px',
+      numVisible: 3,
+      numScroll: 1,
+    },
+  ];
+
   return (
     <main className="home-page">
       <h1 className="main-heading">Welcome!</h1>
       {categoriesWithMovies.map((category) => (
         <section key={category.id} className="movies-display-section">
           <h2 className="sub-heading-category">{category.name}</h2>
-          <div className="cards-grid">
-            {category.movies.map((movie) => (
-              <MovieCard key={movie.id} film={movie} />
-            ))}
-          </div>
+          <MovieCarousel
+            movies={category.movies}
+            responsiveOptions={responsiveOptions}
+          />
         </section>
       ))}
     </main>

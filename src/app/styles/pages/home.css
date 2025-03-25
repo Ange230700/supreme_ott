@@ -16,7 +16,7 @@
 }
 
 @utility movies-display-section {
-  @apply self-stretch flex-1 flex flex-col gap-4;
+  @apply self-stretch flex-1 flex flex-col gap-4 mb-8;
 }
 
 @utility sub-heading-category {
