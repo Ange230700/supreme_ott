@@ -161,7 +161,7 @@ const films = [
     miniature_url:
       "https://i.ebayimg.com/images/g/3hUAAOSwfNRhXhUZ/s-l1200.webp",
     cover_url:
-      "https://d3dfsf9oc1ojzp.cloudfront.net/original/4X/7/3/b/73b08b82c41c646a8e21866f0998ecf5472ce7df.jpeg",
+      "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13661364_p_v10_aa.jpg",
     title: "Justice League Dark",
     videoUrl: "https://www.youtube.com/watch?v=NsBnnM2qjAo",
     duration: 75,
@@ -169,6 +169,19 @@ const films = [
     description:
       "Justice League Dark is a 2017 American animated superhero film produced by Warner Bros. Animation and distributed by Warner Home Video. Featuring the DC Comics team of the same name created by Peter Milligan and Mikel Janin, the film is the twenty-seventh in the DC Universe Animated Original Movies series and a part of DC Animated Movie Universe. It was released digitally on January 24, 2017, and on DVD and Blu-ray on February 7, 2017. The film is directed by Jay Oliva, and stars the voices of Matt Ryan, Jason O'Mara, Camilla Luddington, Nicholas Turturro, and Ray Chase.",
     IsAvailable: 1,
+  },
+  {
+    miniature_url:
+      "https://i.ebayimg.com/images/g/qisAAOSwDvVkuA-M/s-l1600.jpg",
+    cover_url:
+      "https://4kwallpapers.com/images/wallpapers/justice-league-3840x2160-11805.jpg",
+    title: "Justice League War World",
+    videoUrl: "https://www.youtube.com/watch?v=IPDLodUE9gg&ab",
+    duration: 79,
+    year: "2021",
+    description:
+      "Justice League: War is a 2014 American animated superhero film featuring the DC Comics superhero team the Justice League, and an adaptation of the 2011 comic book series Justice League: Origin by Geoff Johns and Jim Lee, the first story in DC's The New 52. It was directed by Jay Oliva, scripted by Heath Corson.",
+    IsAvailable: 0,
   },
   {
     miniature_url:

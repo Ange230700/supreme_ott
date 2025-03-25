@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default async function Home() {
-  // Use the public API URL from .env
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
   const res = await fetch(new URL("/api/films", baseUrl));
   const films = await res.json();
@@ -24,7 +23,9 @@ export default async function Home() {
                 src={film.cover_url}
                 alt={film.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 style={{ objectFit: "cover" }}
+                priority={true}
               />
             </div>
             <h2 className="mt-2 text-xl">{film.title}</h2>
