@@ -23,6 +23,7 @@ export default async function Home() {
                 src={film.cover_url}
                 alt={film.title}
                 fill
+                sizes="100%, 100%"
                 className="object-cover"
                 priority={true}
               />
