@@ -1,4 +1,4 @@
-// src\app\layout.js
+// src\app\layout.jsx
 
 import PropTypes from "prop-types";
 import "./styles/globals.css";
