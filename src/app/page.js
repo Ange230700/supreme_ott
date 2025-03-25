@@ -9,16 +9,12 @@ export default async function Home() {
   const films = await res.json();
 
   return (
-    <main className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Welcome to OTT Platform</h1>
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <main className="home-page">
+      <h1 className="main-heading">Welcome to OTT Platform</h1>
+      <section className="cards-grid">
         {films.map((film) => (
-          <Link
-            key={film.id}
-            href={`/movies/${film.id}`}
-            className="block border p-4 hover:shadow-lg"
-          >
-            <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
+          <Link key={film.id} href={`/movies/${film.id}`} className="card">
+            <div className="card-pic-frame">
               <Image
                 src={film.cover_url}
                 alt={film.title}
@@ -28,7 +24,7 @@ export default async function Home() {
                 priority={true}
               />
             </div>
-            <h2 className="mt-2 text-xl">{film.title}</h2>
+            <h2 className="card-title">{film.title}</h2>
           </Link>
         ))}
       </section>

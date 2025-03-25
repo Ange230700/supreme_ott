@@ -1,24 +1,37 @@
 /* src\app\styles\globals.css */
 
+@charset "utf-8";
 @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap");
 
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --background-color: hsl(210, 89%, 7%, 1);
+  --primary-font-color: hsla(53, 82%, 66%, 1);
+  --secondary-font-color: hsla(335, 100%, 66%, 1);
+  --text-field-background-color: hsla(0, 0%, 86%, 1);
+  --neutral-color: hsla(0, 0%, 100%, 1);
+  --neutral-color-faded: hsla(0, 0%, 100%, 0.4);
+  --neutral-color-2: hsla(0, 0%, 0%, 1);
+  --neutral-color-2-faded: hsla(0, 0%, 0%, 0.4);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--neutral-color-faded);
+  --color-foreground: var(--background-color);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--background-color);
+    --foreground: var(--neutral-color);
   }
+}
+
+/* Additional base styles (if needed) */
+@base {
+  /* You can add resets or element-specific base styles here if desired */
 }
 
 body {
@@ -26,3 +39,30 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Home page */
+@utility home-page {
+  @apply container mx-auto p-4;
+}
+
+@utility main-heading {
+  @apply text-3xl font-bold mb-4;
+}
+
+@utility cards-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
+}
+
+@utility card {
+  @apply block border p-4 hover:shadow-lg;
+}
+
+@utility card-pic-frame {
+  @apply relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80;
+}
+
+@utility card-title {
+  @apply mt-2 text-xl;
+}
+
+/* ======== */
