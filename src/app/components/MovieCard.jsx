@@ -6,10 +6,10 @@ import Image from "next/image";
 
 const MovieCard = ({ film }) => {
   return (
-    <Link href={`/movies/${film.id}`} className="card">
-      <div className="card-pic-frame">
+    <Link href={`/movies/${film.id}`} className="movie-link">
+      <div className="movie-slide">
         <Image
-          src={film.cover_url}
+          src={film.miniature_url}
           alt={film.title}
           fill
           sizes="100%, 100%"
@@ -17,7 +17,7 @@ const MovieCard = ({ film }) => {
           priority={true}
         />
       </div>
-      <h2 className="card-title">{film.title}</h2>
+      {/* <h2 className="card-title">{film.title}</h2> */}
     </Link>
   );
 };
@@ -25,7 +25,7 @@ const MovieCard = ({ film }) => {
 MovieCard.propTypes = {
   film: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    cover_url: PropTypes.string.isRequired,
+    miniature_url: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,
 };

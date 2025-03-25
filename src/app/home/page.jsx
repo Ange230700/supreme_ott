@@ -24,7 +24,7 @@ export default async function Home() {
     <main className="home-page">
       <h1 className="main-heading">Welcome!</h1>
       {categoriesWithMovies.map((category) => (
-        <section key={category.id} className="mb-8">
+        <section key={category.id} className="movies-display-section">
           <h2 className="sub-heading-category">{category.name}</h2>
           <div className="cards-grid">
             {category.movies.map((movie) => (
