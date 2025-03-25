@@ -53,6 +53,8 @@ body {
   @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
 }
 
+
+/* Card component */
 @utility card {
   @apply block border p-4 hover:shadow-lg;
 }
@@ -64,5 +66,6 @@ body {
 @utility card-title {
   @apply mt-2 text-xl;
 }
+/* ======== */
 
 /* ======== */
