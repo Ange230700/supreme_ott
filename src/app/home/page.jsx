@@ -2,7 +2,7 @@
 
 import MovieCard from "../components/MovieCard";
 
-export default async function CategoriesPage() {
+export default async function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   // Fetch categories from the API
