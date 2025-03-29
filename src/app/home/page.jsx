@@ -2,6 +2,7 @@
 
 import HeroSlider from "../components/HeroSlider";
 import MovieCarousel from "../components/MovieCarousel";
+import movieCarouselResponsiveOptions from "../modules/movieCarouselResponsiveOptions";
 
 export default async function Home() {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -25,24 +26,6 @@ export default async function Home() {
     })
   );
 
-  const responsiveOptions = [
-    {
-      breakpoint: '1400px',
-      numVisible: 5,
-      numScroll: 1,
-    },
-    {
-      breakpoint: '1024px',
-      numVisible: 4,
-      numScroll: 1,
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 3,
-      numScroll: 1,
-    },
-  ]
-
   return (
     <>
       <header>
@@ -54,7 +37,7 @@ export default async function Home() {
             <h2 className="sub-heading-category">{category.name}</h2>
             <MovieCarousel
               movies={category.movies}
-              responsiveOptions={responsiveOptions}
+              responsiveOptions={movieCarouselResponsiveOptions}
             />
           </section>
         ))}
