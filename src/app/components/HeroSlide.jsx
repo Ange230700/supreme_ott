@@ -6,9 +6,7 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 
 export default function HeroSlide({ movie }) {
-  const imageUrl = movie.cover_filename
-    ? `${process.env.NEXT_PUBLIC_API_URL}/assets/images/${movie.cover_filename}`
-    : movie.cover_url;
+  const imageUrl = movie.cover_url;
 
   return (
     <div className="hero-slide">
@@ -27,7 +25,6 @@ export default function HeroSlide({ movie }) {
 HeroSlide.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    cover_filename: PropTypes.string,
     cover_url: PropTypes.string,
     title: PropTypes.string.isRequired,
   }).isRequired,

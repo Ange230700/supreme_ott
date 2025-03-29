@@ -49,7 +49,6 @@ export default async function Home() {
         <HeroSlider movies={movies} />
       </header>
       <main className="home-page">
-        {/* <h1 className="main-heading">Welcome!</h1> */}
         {categoriesWithMovies.map((category) => (
           <section key={category.id} className="movies-display-section">
             <h2 className="sub-heading-category">{category.name}</h2>

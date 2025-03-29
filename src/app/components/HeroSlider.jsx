@@ -7,12 +7,11 @@ import { Carousel } from "primereact/carousel";
 import HeroSlideLink from "./HeroSlideLink";
 
 export default function HeroSlider({ movies }) {
-  // Define a template to render each available movie slide.
-  const itemTemplate = (movie) => {
-    return movie?.IsAvailable ? (
-      <HeroSlideLink movie={movie} />
-    ) : null;
-  };
+  // Filter out only available movies
+  const availableMovies = movies.filter((movie) => movie.IsAvailable);
+
+  // Define a template to render each movie slide.
+  const itemTemplate = (movie) => <HeroSlideLink movie={movie} />;
 
   // Responsive options for Primereact Carousel.
   const responsiveOptions = [
@@ -35,7 +34,7 @@ export default function HeroSlider({ movies }) {
 
   return (
     <Carousel
-      value={movies}
+      value={availableMovies}
       itemTemplate={itemTemplate}
       circular
       autoplayInterval={3000}
