@@ -20,7 +20,7 @@ export default function MovieCarousel({ movies, responsiveOptions }) {
         <Carousel
             value={movies}
             numVisible={5}
-            numScroll={2}
+            numScroll={1}
             responsiveOptions={responsiveOptions}
             itemTemplate={itemTemplate}
             circular

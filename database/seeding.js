@@ -63,9 +63,7 @@ async function insertCategories() {
     const queries = [];
     for (const cat of categories) {
       queries.push(
-        pool.query("INSERT INTO `Categorie` (`name`) VALUES (?)", [
-          cat.name,
-        ])
+        pool.query("INSERT INTO `Categorie` (`name`) VALUES (?)", [cat.name])
       );
     }
     await Promise.all(queries);
@@ -131,41 +129,31 @@ async function insertFilmCategorie() {
     const [categoriesCountRow] = await pool.query(
       "SELECT COUNT(*) AS count FROM `Categorie`"
     );
-    const uniqueKeysCombinations = new Set();
-    const queries = [];
-    const totalOfUniqueKeysCombinations = categories.length * films.length;
-
-    if (categoriesCountRow[0].count && filmsCountRow[0].count) {
-      while (
-        uniqueKeysCombinations.size <
-        faker.number.int({
-          min: Math.floor(totalOfUniqueKeysCombinations / 4 / 2),
-          max: Math.floor(totalOfUniqueKeysCombinations / 2 / 2),
-        })
-      ) {
-        const filmId = faker.number.int({ min: 1, max: films.length });
-        const categorieId = faker.number.int({
-          min: 1,
-          max: categories.length,
-        });
-        const unique_key = `${filmId}-${categorieId}`;
-
-        if (!uniqueKeysCombinations.has(unique_key)) {
-          uniqueKeysCombinations.add(unique_key);
-          queries.push(
-            pool.query(
-              "INSERT INTO `Categorie_par_film` (`filmId`, `categorieId`, `unique_key`) VALUES (?, ?, ?)",
-              [filmId, categorieId, unique_key]
-            )
-          );
-        }
-      }
-      await Promise.all(queries);
-    } else {
+    if (!filmsCountRow[0].count || !categoriesCountRow[0].count) {
       throw new Error(
         "Not enough data in Film or Categorie tables for seeding Categorie_par_film"
       );
     }
+    const queries = [];
+    for (let catIndex = 0; catIndex < categories.length; catIndex++) {
+      const categoryId = catIndex + 1;
+      const usedFilmIds = new Set();
+
+      while (usedFilmIds.size < 7) {
+        const filmId = faker.number.int({ min: 1, max: films.length });
+        if (!usedFilmIds.has(filmId)) {
+          usedFilmIds.add(filmId);
+          const unique_key = `${filmId}-${categoryId}`;
+          queries.push(
+            pool.query(
+              "INSERT INTO `Categorie_par_film` (`filmId`, `categorieId`, `unique_key`) VALUES (?, ?, ?)",
+              [filmId, categoryId, unique_key]
+            )
+          );
+        }
+      }
+    }
+    await Promise.all(queries);
   } catch (err) {
     console.error("Error inserting film_categorie:", err.message);
     throw err;
