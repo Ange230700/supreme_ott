@@ -5,6 +5,7 @@
 @import "../components/movieLink.css";
 @import "../components/movieSlide.css";
 @import "../components/categoryDisplay.css";
+@import "../components/heroSlider.css";
 
 /* Home page utilities */
 @utility home-page {
