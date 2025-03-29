@@ -5,6 +5,7 @@
 import PropTypes from "prop-types";
 import { Carousel } from "primereact/carousel";
 import HeroSlideLink from "./HeroSlideLink";
+import heroSliderResponsiveOptions from "../modules/heroSliderResponsiveOptions";
 
 export default function HeroSlider({ movies }) {
   // Filter out only available movies
@@ -13,32 +14,13 @@ export default function HeroSlider({ movies }) {
   // Define a template to render each movie slide.
   const itemTemplate = (movie) => <HeroSlideLink movie={movie} />;
 
-  // Responsive options for Primereact Carousel.
-  const responsiveOptions = [
-    {
-      breakpoint: "1024px",
-      numVisible: 1,
-      numScroll: 1,
-    },
-    {
-      breakpoint: "768px",
-      numVisible: 1,
-      numScroll: 1,
-    },
-    {
-      breakpoint: "560px",
-      numVisible: 1,
-      numScroll: 1,
-    },
-  ];
-
   return (
     <Carousel
       value={availableMovies}
       itemTemplate={itemTemplate}
       circular
       autoplayInterval={3000}
-      responsiveOptions={responsiveOptions}
+      responsiveOptions={heroSliderResponsiveOptions}
       className="hero-slider-container"
     />
   );
