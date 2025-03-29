@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "build-db": "node ./database/migration.js && node ./database/seeding.js",
-    "clean": "rm -rf .next && rm -rf node_modules && rm -rf package-lock.json"
+    "clean": "rm -rf .next && rm -rf node_modules && rm -rf package-lock.json",
+    "launch": "npm run clean && npm install && npm run lint && npm run build-db && npm run dev"
   },
   "dependencies": {
     "argon2": "^0.41.1",
