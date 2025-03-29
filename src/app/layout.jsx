@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <head />
       <body
         style={{ fontFamily: '"Gabarito", sans-serif' }}
-        className="antialiased"
+        className="antialiased body"
       >
         {children}
       </body>
