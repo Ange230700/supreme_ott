@@ -13,7 +13,7 @@
 }
 
 @utility hero-slide-image {
-  @apply object-cover;
+  @apply object-cover object-top;
 }
 
 @utility hero-slide-link {

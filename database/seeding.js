@@ -139,7 +139,7 @@ async function insertFilmCategorie() {
       const categoryId = catIndex + 1;
       const usedFilmIds = new Set();
 
-      while (usedFilmIds.size < 7) {
+      while (usedFilmIds.size < 12) {
         const filmId = faker.number.int({ min: 1, max: films.length });
         if (!usedFilmIds.has(filmId)) {
           usedFilmIds.add(filmId);
