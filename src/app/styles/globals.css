@@ -5,9 +5,10 @@
 
 @import "tailwindcss";
 
-@import "./components/navbar.css";
 @import "./components/navbarDesktop.css";
 @import "./pages/home.css";
+@import "./components/navbar.css";
+@import "./components/footer.css";
 
 :root {
   --background-color: hsl(210, 89%, 7%, 1);

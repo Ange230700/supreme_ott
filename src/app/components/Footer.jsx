@@ -1,9 +1,24 @@
 // src\app\components\Footer.jsx
 
-import React from "react";
+"use client";
 
-const Footer = () => {
-  return <div>Footer</div>;
-};
+import Link from "next/link";
 
-export default Footer;
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <p className="footer-text">
+        Check out the source code on{" "}
+        <Link
+          href="https://github.com/Ange230700/supreme_ott"
+          className="footer-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </Link>
+      </p>
+    </footer>
+  );
+}
+
