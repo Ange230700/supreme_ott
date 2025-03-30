@@ -4,13 +4,14 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
+import { House, Search } from "@deemlol/next-icons";
 // import { useUser } from "../contexts/UserContext";
 
 export default function NavBar() {
   // const { user } = useUser();
   const pathname = usePathname();
-  const backendUrl = process.env.NEXT_PUBLIC_API_URL;
+  // const backendUrl = process.env.NEXT_PUBLIC_API_URL;
 
   // const changeProfile = () => {
   //   if (user?.IsAdmin) return "/Parametre";
@@ -35,24 +36,12 @@ export default function NavBar() {
       <section className="flex justify-around p-4">
         <div className="nav-icon-container">
           <Link href="/" className="div-icon">
-              <Image
-                src={`${backendUrl}/assets/icons/home_icon.svg`}
-                alt="home icon"
-                width={24}
-                height={24}
-                className="icon"
-                />
+            <House size={24} color="#FFFFFF" />
           </Link>
         </div>
         <div className="nav-icon-container">
           <Link href="/search" className="div-icon">
-              <Image
-                src={`${backendUrl}/assets/icons/search_icon.svg`}
-                alt="search icon"
-                width={24}
-                height={24}
-                className="icon"
-                />
+            <Search size={24} color="#FFFFFF" />
           </Link>
         </div>
         {/* <div className="nav-icon-container">

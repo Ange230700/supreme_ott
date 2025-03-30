@@ -23,27 +23,23 @@
   --color-foreground: var(--background-color);
 }
 
-@base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
-  body {
-    background: var(--background);
-    color: var(--foreground);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--background-color);
+    --foreground: var(--neutral-color);
   }
 }
 
 @utility body {
-  @apply p-10;
+  @apply px-10;
 }
 
 @utility navbar {
-  @apply bg-[hsla(210,89%,7%,1)] text-neutral-color p-4;
+  @apply p-4;
 }
 
 @utility navbar-desktop {
-  @apply bg-[hsla(210,89%,7%,1)] text-neutral-color p-4;
+  @apply p-4;
 }
 
 @utility nav-icon-container {
@@ -60,4 +56,9 @@
 
 @utility link-text {
   @apply text-lg font-semibold;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
 }
