@@ -7,16 +7,18 @@ import MovieCarousel from "../components/MovieCarousel";
 import movieCarouselResponsiveOptions from "../modules/movieCarouselResponsiveOptions";
 import { useCategories } from "../hooks/useCategories";
 import { useMovies } from "../hooks/useMovies";
+import MovieGenreTabsContainer from "../components/MovieGenreTabsContainer";
 
 export default function Home() {
   const { movies } = useMovies();
-  const { categoriesWithMovies } = useCategories();
+  const { categories, categoriesWithMovies } = useCategories();
 
   return (
     <>
       <header>
         <HeroSlider movies={movies} />
       </header>
+      <MovieGenreTabsContainer categories={categories} />
       <main className="home-page">
         {categoriesWithMovies.length ? (
           categoriesWithMovies.map((category) => (

@@ -6,6 +6,7 @@
 @import "../components/movieSlide.css";
 @import "../components/categoryDisplay.css";
 @import "../components/heroSlider.css";
+@import "../components/movieGenreTabsContainer.css";
 
 /* Home page utilities */
 @utility home-page {

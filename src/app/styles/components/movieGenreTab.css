@@ -1,0 +1,9 @@
+/* src\app\styles\components\movieGenreTab.css */
+
+@utility movie-genre {
+  @apply text-lg font-semibold transition-colors;
+}
+
+/* @utility selected-tab {
+    @apply text-lg font-semibold transition-colors;
+} */
