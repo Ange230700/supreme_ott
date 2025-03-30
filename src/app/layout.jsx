@@ -1,6 +1,8 @@
 // src\app\layout.jsx
 
 import PropTypes from "prop-types";
+import NavBarDesktop from "./components/NavBarDesktop";
+import NavBar from "./components/NavBar";
 import "./styles/globals.css";
 
 export const metadata = {
@@ -16,7 +18,13 @@ export default function RootLayout({ children }) {
         style={{ fontFamily: '"Gabarito", sans-serif' }}
         className="antialiased body"
       >
+        <div className="hidden md:block">
+          <NavBarDesktop />
+        </div>
         {children}
+        <div className="md:hidden">
+          <NavBar />
+        </div>
       </body>
     </html>
   );
