@@ -5,6 +5,8 @@ import NavBarDesktop from "./components/NavBarDesktop";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import "./styles/globals.css";
+import { MovieProvider } from "./providers/MovieProvider";
+import { CategoryProvider } from "./providers/CategoryProvider";
 
 export const metadata = {
   title: "OTT",
@@ -22,7 +24,11 @@ export default function RootLayout({ children }) {
         <div className="hidden md:block">
           <NavBarDesktop />
         </div>
-        {children}
+        <CategoryProvider>
+          <MovieProvider>
+            {children}
+          </MovieProvider>
+        </CategoryProvider>
         <Footer />
         <div className="md:hidden">
           <NavBar />

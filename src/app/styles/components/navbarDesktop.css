@@ -4,8 +4,8 @@
   @apply p-4 hidden md:flex items-center justify-between;
 }
 
-@utility logo {
-    @apply w-[150px] h-auto;
+@utility logo-container {
+    @apply relative w-[150px] h-[50px];
 }
 
 @utility links-container {

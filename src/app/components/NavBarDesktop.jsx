@@ -10,7 +10,7 @@ import { User } from "@deemlol/next-icons";
 
 export default function NavBarDesktop() {
     // const { user } = useUser();
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL;
+    // const backendUrl = process.env.NEXT_PUBLIC_API_URL;
 
     // const changeProfile = () => {
     //     if (user?.IsAdmin) return "/Parametre";
@@ -20,13 +20,16 @@ export default function NavBarDesktop() {
 
     return (
         <nav className="navbar-desktop">
-            <Image
-                className="logo"
-                src="/assets/icons/logo.svg"
-                alt="logo"
-                width={150}
-                height={50}
-            />
+            <div className="logo-container">
+                <Image
+                    className="logo"
+                    src="/assets/icons/logo.svg"
+                    alt="logo"
+                    fill
+                    priority={true}
+                    style={{ objectFit: "contain" }}
+                />
+            </div>
             <div className="links-container">
                 <Link href="/" className="link">
                     <p className="link-text">Home</p>
