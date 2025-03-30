@@ -4,6 +4,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { User } from "@deemlol/next-icons";
 // import { useUser } from "../contexts/UserContext";
 // import ToggleSwitch from "./ToggleSwitch";
 
@@ -21,7 +22,7 @@ export default function NavBarDesktop() {
         <div className="navbar-desktop hidden md:flex items-center justify-between p-4">
             <Image
                 className="logo"
-                src={`${backendUrl}/assets/icons/logo.svg`}
+                src="/assets/icons/logo.svg"
                 alt="logo"
                 width={48}
                 height={48}
@@ -39,7 +40,7 @@ export default function NavBarDesktop() {
                         <ToggleSwitch user={user} />
                     </div>
                 )} */}
-                <Link href={changeProfile()} className="link">
+                <Link href="/" className="link">
                     {/* {user ? (
                         <Image
                             className="icon rounded-full"
@@ -54,13 +55,14 @@ export default function NavBarDesktop() {
                             height={32}
                         />
                     ) : ( */}
-                    <Image
+                    {/* <Image
                         className="icon"
                         src={`${backendUrl}/assets/icons/profile_icon.svg`}
                         alt="connexion"
                         width={32}
                         height={32}
-                    />
+                    /> */}
+                    <User size={24} color="#FFFFFF" />
                     {/* )} */}
                 </Link>
             </div>

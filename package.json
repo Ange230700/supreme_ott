@@ -13,6 +13,7 @@
     "launch": "npm run clean && npm install && npm run lint && npm run build-db && npm run dev"
   },
   "dependencies": {
+    "@deemlol/next-icons": "^0.1.9",
     "argon2": "^0.41.1",
     "dotenv": "^16.4.7",
     "jsonwebtoken": "^9.0.2",
