@@ -32,8 +32,8 @@ export default function NavBar() {
       : "";
 
   return (
-    <nav className={`navbar ${navBarClasses} md:hidden`}>
-      <section className="flex justify-around p-4">
+    <nav className={`navbar ${navBarClasses}`}>
+      <section className="nav-icon-wrapper">
         <div className="nav-icon-container">
           <Link href="/" className="div-icon">
             <House size={24} color="#FFFFFF" />
