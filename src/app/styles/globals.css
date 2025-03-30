@@ -5,6 +5,8 @@
 
 @import "tailwindcss";
 
+@import "./components/navbar.css";
+@import "./components/navbarDesktop.css";
 @import "./pages/home.css";
 
 :root {
@@ -32,30 +34,6 @@
 
 @utility body {
   @apply px-10;
-}
-
-@utility navbar {
-  @apply p-4;
-}
-
-@utility navbar-desktop {
-  @apply p-4;
-}
-
-@utility nav-icon-container {
-  @apply flex items-center;
-}
-
-@utility div-icon {
-  @apply block;
-}
-
-@utility link {
-  @apply no-underline;
-}
-
-@utility link-text {
-  @apply text-lg font-semibold;
 }
 
 body {

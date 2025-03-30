@@ -1,0 +1,17 @@
+/* src\app\styles\components\navbar.css */
+
+@utility navbar {
+  @apply p-4 md:hidden;
+}
+
+@utility nav-icon-wrapper {
+    @apply flex justify-around p-4;
+}
+
+@utility nav-icon-container {
+  @apply flex items-center;
+}
+
+@utility div-icon {
+  @apply block;
+}

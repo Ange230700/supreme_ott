@@ -19,20 +19,20 @@ export default function NavBarDesktop() {
     // };
 
     return (
-        <div className="navbar-desktop hidden md:flex items-center justify-between p-4">
+        <nav className="navbar-desktop">
             <Image
                 className="logo"
                 src="/assets/icons/logo.svg"
                 alt="logo"
-                width={48}
-                height={48}
+                width={150}
+                height={50}
             />
-            <div className="links-container flex items-center space-x-4">
+            <div className="links-container">
                 <Link href="/" className="link">
-                    <p className="link-text text-lg font-semibold">Home</p>
+                    <p className="link-text">Home</p>
                 </Link>
                 <Link href="/search" className="link">
-                    <p className="link-text text-lg font-semibold">Research</p>
+                    <p className="link-text">Research</p>
                 </Link>
                 {/* {user?.IsAdmin && (
                     <div className="switchContainer flex items-center space-x-2">
@@ -66,6 +66,6 @@ export default function NavBarDesktop() {
                     {/* )} */}
                 </Link>
             </div>
-        </div>
+        </nav>
     );
 }
