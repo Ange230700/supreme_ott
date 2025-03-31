@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <header>
+      <header className="header">
         <HeroSlider movies={movies} />
       </header>
       <MovieGenreTabsContainer categories={categories} />

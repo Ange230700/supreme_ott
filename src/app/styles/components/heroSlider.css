@@ -9,7 +9,7 @@
 }
 
 @utility hero-slide {
-  @apply relative w-full h-[500px] rounded-lg overflow-hidden;
+  @apply relative w-full h-[80vh] rounded-lg overflow-hidden;
 }
 
 @utility hero-slide-image {
