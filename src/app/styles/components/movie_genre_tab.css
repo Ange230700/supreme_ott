@@ -1,7 +1,7 @@
 /* src\app\styles\components\movie_genre_tab.css */
 
 @utility movie-genre {
-  @apply text-2xl font-semibold transition-colors;
+  @apply text-2xl font-semibold transition-colors hover:text-secondary;
 }
 
 /* @utility selected-tab {
