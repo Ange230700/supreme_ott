@@ -2,7 +2,7 @@
 
 /* Import the movie card styles */
 @import "../components/hero_slider.css";
-@import "../components/movieGenreTabsContainer.css";
+@import "../components/movie_genre_tabs_container.css";
 @import "../components/movie_carousel.css";
 
 /* Home page utilities */
@@ -23,7 +23,7 @@
 }
 
 @utility sub-heading-category {
-  @apply text-2xl font-semibold mb-2;
+  @apply text-xl font-semibold mb-2;
 }
 
 @utility cards-grid {

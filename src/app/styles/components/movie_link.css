@@ -1,0 +1,7 @@
+/* src\app\styles\components\movie_link.css */
+
+@import "./movie_slide.css";
+
+@utility movie-link {
+  @apply relative inline-flex;
+}
