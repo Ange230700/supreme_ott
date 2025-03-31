@@ -30,11 +30,8 @@ export default function NavBarDesktop() {
                 />
             </Link>
             <div className="links-container">
-                <Link href="/" className="link">
-                    <p className="link-text">Home</p>
-                </Link>
                 <Link href="/search" className="link">
-                    <p className="link-text">Research</p>
+                    <p className="link-text">Search</p>
                 </Link>
                 {/* {user?.IsAdmin && (
                     <div className="switchContainer flex items-center space-x-2">
