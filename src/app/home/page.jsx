@@ -4,7 +4,6 @@
 
 import HeroSlider from "../components/HeroSlider";
 import MovieCarousel from "../components/MovieCarousel";
-import movieCarouselResponsiveOptions from "../modules/movieCarouselResponsiveOptions";
 import { useCategories } from "../hooks/useCategories";
 import { useMovies } from "../hooks/useMovies";
 import MovieGenreTabsContainer from "../components/MovieGenreTabsContainer";
@@ -26,7 +25,6 @@ export default function Home() {
               <h2 className="sub-heading-category">{category.name}</h2>
               <MovieCarousel
                 movies={category.movies}
-                responsiveOptions={movieCarouselResponsiveOptions}
               />
             </section>
           ))
