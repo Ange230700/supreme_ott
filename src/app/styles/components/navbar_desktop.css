@@ -8,6 +8,10 @@
   @apply relative w-[300px] h-[100px];
 }
 
+@utility logo {
+  @apply transition-transform duration-300 hover:scale-[1.2];
+}
+
 @utility links-container {
   @apply flex items-center space-x-4;
 }
@@ -17,5 +21,5 @@
 }
 
 @utility link-text {
-  @apply text-3xl font-semibold;
+  @apply text-3xl font-semibold transition-transform duration-300 hover:scale-102 hover:text-secondary;
 }

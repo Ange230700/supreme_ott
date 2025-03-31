@@ -4,7 +4,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { User } from "@deemlol/next-icons";
 // import { useUser } from "../contexts/UserContext";
 // import ToggleSwitch from "./ToggleSwitch";
 
@@ -39,7 +38,7 @@ export default function NavBarDesktop() {
                 </Link>
                 {/* {user?.IsAdmin && (
                     <div className="switchContainer flex items-center space-x-2">
-                        <h6 className="text-sm">Admin mode:</h6>
+                        <h6 className="text-sm">Administrator mode:</h6>
                         <ToggleSwitch user={user} />
                     </div>
                 )} */}
