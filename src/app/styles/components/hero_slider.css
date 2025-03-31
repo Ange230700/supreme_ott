@@ -1,4 +1,4 @@
-/* src\app\styles\components\heroSlider.css */
+/* src\app\styles\components\hero_slider.css */
 
 @utility hero-slider-container {
   @apply relative w-full overflow-hidden;
@@ -19,4 +19,3 @@
 @utility hero-slide-link {
   @apply block no-underline;
 }
-

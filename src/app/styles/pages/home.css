@@ -1,12 +1,9 @@
 /* src\app\styles\pages\home.css */
 
 /* Import the movie card styles */
-@import "../components/movie_card.css";
-@import "../components/movieLink.css";
-@import "../components/movieSlide.css";
-@import "../components/categoryDisplay.css";
-@import "../components/heroSlider.css";
+@import "../components/hero_slider.css";
 @import "../components/movieGenreTabsContainer.css";
+@import "../components/movie_carousel.css";
 
 /* Home page utilities */
 @utility home-page {

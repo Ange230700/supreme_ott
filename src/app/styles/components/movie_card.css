@@ -1,5 +1,7 @@
 /* src/app/styles/movie_card.css */
 
+@import "./movieLink.css";
+
 /* Card component utilities */
 
 @utility card {
