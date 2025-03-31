@@ -9,13 +9,11 @@ import movieCarouselResponsiveOptions from "../modules/movieCarouselResponsiveOp
 
 export default function MovieCarousel({ movies }) {
     // Define the itemTemplate function inside the client component.
-    const itemTemplate = (movie) => {
-        return (
-            <div className="flex justify-center items-center">
-                <MovieCard film={movie} />
-            </div>
-        );
-    };
+    const itemTemplate = (movie) => (
+        <div className="movie-card-container">
+            <MovieCard film={movie} />
+        </div>
+    );
 
     return (
         <Carousel

@@ -8,7 +8,11 @@ import MovieGenreTab from "./MovieGenreTab";
 import movieGenreTabsResponsiveOptions from "../modules/movieGenreTabsResponsiveOptions";
 
 export default function MovieGenreTabsContainer({ categories }) {
-    const itemTemplate = (category) => <MovieGenreTab category={category} />;
+    const itemTemplate = (category) => (
+        <div className="movie-genre-tab-container">
+            <MovieGenreTab category={category} />
+        </div>
+    );
 
     return (
         <Carousel
