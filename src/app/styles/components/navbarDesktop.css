@@ -5,11 +5,11 @@
 }
 
 @utility logo-container {
-    @apply relative w-[150px] h-[50px];
+  @apply relative w-[300px] h-[100px];
 }
 
 @utility links-container {
-    @apply flex items-center space-x-4;
+  @apply flex items-center space-x-4;
 }
 
 @utility link {
@@ -17,6 +17,5 @@
 }
 
 @utility link-text {
-  @apply text-lg font-semibold;
+  @apply text-3xl font-semibold;
 }
-

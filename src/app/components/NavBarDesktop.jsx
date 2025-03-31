@@ -20,7 +20,7 @@ export default function NavBarDesktop() {
 
     return (
         <nav className="navbar-desktop">
-            <div className="logo-container">
+            <Link href="/" className="logo-container">
                 <Image
                     className="logo"
                     src="/assets/icons/logo.svg"
@@ -29,7 +29,7 @@ export default function NavBarDesktop() {
                     priority={true}
                     style={{ objectFit: "contain" }}
                 />
-            </div>
+            </Link>
             <div className="links-container">
                 <Link href="/" className="link">
                     <p className="link-text">Home</p>
@@ -65,7 +65,7 @@ export default function NavBarDesktop() {
                         width={32}
                         height={32}
                     /> */}
-                    <User size={24} color="#FFFFFF" />
+                    <p className="link-text">Login</p>
                     {/* )} */}
                 </Link>
             </div>
