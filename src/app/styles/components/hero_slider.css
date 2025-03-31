@@ -1,0 +1,9 @@
+/* src\app\styles\components\hero_slider.css */
+
+@import "./hero_slide_link.css";
+
+@utility hero-slider-container {
+  @apply relative w-full overflow-hidden;
+}
+
+

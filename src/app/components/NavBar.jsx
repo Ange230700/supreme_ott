@@ -5,7 +5,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 // import Image from "next/image";
-import { House, Search } from "@deemlol/next-icons";
+import { House, Search, User } from "@deemlol/next-icons";
 // import { useUser } from "../contexts/UserContext";
 
 export default function NavBar() {
@@ -42,6 +42,11 @@ export default function NavBar() {
         <div className="nav-icon-container">
           <Link href="/search" className="div-icon">
             <Search size={24} color="#FFFFFF" />
+          </Link>
+        </div>
+        <div className="nav-icon-container">
+          <Link href="/profil" className="div-icon">
+            <User size={24} color="#FFFFFF" />
           </Link>
         </div>
         {/* <div className="nav-icon-container">

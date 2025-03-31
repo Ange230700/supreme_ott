@@ -1,0 +1,11 @@
+/* src\app\styles\components\movie_genre_tabs_container.css */
+
+@import "./movie_genre_tab.css";
+
+@utility movie-genre-tab-container {
+    @apply flex-1 flex flex-col justify-center items-center;
+}
+
+@utility genre-carousel {
+    @apply mb-8;
+}

@@ -1,15 +1,4 @@
 /* src/app/styles/movie_card.css */
 
-/* Card component utilities */
+@import "./movie_link.css";
 
-@utility card {
-  @apply block border p-4 hover:shadow-lg;
-}
-
-@utility card-pic-frame {
-  @apply relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80;
-}
-
-@utility card-title {
-  @apply mt-2 text-xl;
-}

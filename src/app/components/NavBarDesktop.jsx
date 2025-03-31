@@ -4,13 +4,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { User } from "@deemlol/next-icons";
 // import { useUser } from "../contexts/UserContext";
 // import ToggleSwitch from "./ToggleSwitch";
 
 export default function NavBarDesktop() {
     // const { user } = useUser();
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL;
+    // const backendUrl = process.env.NEXT_PUBLIC_API_URL;
 
     // const changeProfile = () => {
     //     if (user?.IsAdmin) return "/Parametre";
@@ -20,13 +19,16 @@ export default function NavBarDesktop() {
 
     return (
         <nav className="navbar-desktop">
-            <Image
-                className="logo"
-                src="/assets/icons/logo.svg"
-                alt="logo"
-                width={150}
-                height={50}
-            />
+            <Link href="/" className="logo-container">
+                <Image
+                    className="logo"
+                    src="/assets/icons/logo.svg"
+                    alt="logo"
+                    fill
+                    priority={true}
+                    style={{ objectFit: "contain" }}
+                />
+            </Link>
             <div className="links-container">
                 <Link href="/" className="link">
                     <p className="link-text">Home</p>
@@ -36,7 +38,7 @@ export default function NavBarDesktop() {
                 </Link>
                 {/* {user?.IsAdmin && (
                     <div className="switchContainer flex items-center space-x-2">
-                        <h6 className="text-sm">Admin mode:</h6>
+                        <h6 className="text-sm">Administrator mode:</h6>
                         <ToggleSwitch user={user} />
                     </div>
                 )} */}
@@ -62,7 +64,7 @@ export default function NavBarDesktop() {
                         width={32}
                         height={32}
                     /> */}
-                    <User size={24} color="#FFFFFF" />
+                    <p className="link-text">Login</p>
                     {/* )} */}
                 </Link>
             </div>

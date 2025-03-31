@@ -17,7 +17,6 @@ const MovieCard = ({ film }) => {
           priority={true}
         />
       </div>
-      {/* <h2 className="card-title">{film.title}</h2> */}
     </Link>
   );
 };

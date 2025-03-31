@@ -1,9 +1,9 @@
 /* src\app\styles\components\footer.css */
 
 @utility footer {
-  @apply p-4 text-center text-sm text-gray-500;
+  @apply text-3xl p-4 text-center text-neutral;
 }
 
 @utility footer-link {
-  @apply text-blue-500 hover:underline;
+  @apply text-secondary hover:underline;
 }

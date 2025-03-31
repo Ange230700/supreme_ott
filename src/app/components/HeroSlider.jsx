@@ -19,7 +19,7 @@ export default function HeroSlider({ movies }) {
       value={availableMovies}
       itemTemplate={itemTemplate}
       circular
-      autoplayInterval={3000}
+      autoplayInterval={10000}
       responsiveOptions={heroSliderResponsiveOptions}
       className="hero-slider-container"
     />

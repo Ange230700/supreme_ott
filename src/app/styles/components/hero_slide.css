@@ -1,0 +1,9 @@
+/*  src\app\styles\components\hero_slide.css */
+
+@utility hero-slide {
+  @apply relative w-full h-[80vh] rounded-lg overflow-hidden;
+}
+
+@utility hero-slide-image {
+  @apply object-cover object-top;
+}

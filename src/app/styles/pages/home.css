@@ -1,15 +1,17 @@
 /* src\app\styles\pages\home.css */
 
 /* Import the movie card styles */
-@import "../components/movie_card.css";
-@import "../components/movieLink.css";
-@import "../components/movieSlide.css";
-@import "../components/categoryDisplay.css";
-@import "../components/heroSlider.css";
+@import "../components/hero_slider.css";
+@import "../components/movie_genre_tabs_container.css";
+@import "../components/movie_carousel.css";
 
 /* Home page utilities */
 @utility home-page {
   @apply w-full h-full flex flex-col justify-between overflow-x-hidden flex-1;
+}
+
+@utility header {
+  @apply mb-16;
 }
 
 @utility main-heading {
@@ -21,9 +23,5 @@
 }
 
 @utility sub-heading-category {
-  @apply text-2xl font-semibold mb-2;
-}
-
-@utility cards-grid {
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
+  @apply text-xl font-semibold mb-2;
 }
