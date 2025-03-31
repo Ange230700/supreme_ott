@@ -1,7 +1,7 @@
 // src/app/api/auth/login/route.js
 
 import { NextResponse } from "next/server";
-import { pool } from "@/app/lib/db";
+import pool from "@/app/lib/db";
 import argon2 from "argon2";
 import jwt from "jsonwebtoken";
 
