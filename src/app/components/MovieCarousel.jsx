@@ -23,7 +23,7 @@ export default function MovieCarousel({ movies }) {
             responsiveOptions={movieCarouselResponsiveOptions}
             itemTemplate={itemTemplate}
             circular
-            autoplayInterval={4000}
+            autoplayInterval={15000}
             className="custom-carousel"
         />
     );

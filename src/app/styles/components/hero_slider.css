@@ -1,21 +1,9 @@
 /* src\app\styles\components\hero_slider.css */
 
+@import "./hero_slide_link.css";
+
 @utility hero-slider-container {
   @apply relative w-full overflow-hidden;
 }
 
-@utility hero-slider-item {
-  @apply flex justify-center items-center;
-}
 
-@utility hero-slide {
-  @apply relative w-full h-[80vh] rounded-lg overflow-hidden;
-}
-
-@utility hero-slide-image {
-  @apply object-cover object-top;
-}
-
-@utility hero-slide-link {
-  @apply block no-underline;
-}
