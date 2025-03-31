@@ -17,7 +17,7 @@ export default function MovieGenreTabsContainer({ categories }) {
     return (
         <Carousel
             value={categories}
-            numVisible={8}
+            numVisible={13}
             numScroll={1}
             responsiveOptions={movieGenreTabsResponsiveOptions}
             itemTemplate={itemTemplate}
