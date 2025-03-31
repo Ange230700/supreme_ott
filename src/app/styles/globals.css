@@ -7,11 +7,11 @@
 
 @import "./components/navbarDesktop.css";
 @import "./pages/home.css";
-@import "./components/navbar.css";
 @import "./components/footer.css";
+@import "./components/navbar.css";
 
 :root {
-  --background-color: hsl(210, 89%, 7%, 1);
+  --background-color: hsla(210, 89%, 7%, 1);
   --primary-font-color: hsla(53, 82%, 66%, 1);
   --secondary-font-color: hsla(335, 100%, 66%, 1);
   --text-field-background-color: hsla(0, 0%, 86%, 1);
@@ -24,6 +24,9 @@
 @theme inline {
   --color-background: var(--neutral-color-faded);
   --color-foreground: var(--background-color);
+  --color-primary: var(--primary-font-color);
+  --color-secondary: var(--secondary-font-color);
+  --color-neutral: var(--neutral-color)
 }
 
 @media (prefers-color-scheme: dark) {
