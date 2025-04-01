@@ -14,7 +14,8 @@ import MovieGenreTabsContainer from "../components/home/MovieGenreTabsContainer"
 export default function Home() {
   const { movies } = useMovies();
   const { categories, categoriesWithMovies } = useCategories();
-  const movieCarouselLoaderContainerHeight = 78;
+  const movieCarouselLoaderHeight = 78;
+  const movieCarouselLoaderContainerClassName = `h-96`;
   return (
     <>
       <header className="header">
@@ -36,8 +37,8 @@ export default function Home() {
             </section>
           ))
         ) : (
-          <div className={`movie-carousel-loader-container h-${movieCarouselLoaderContainerHeight+24}`}>
-            <Loader size={movieCarouselLoaderContainerHeight} color="#FF529A" className="pi pi-spin" />
+            <div className={`movie-carousel-loader-container ${movieCarouselLoaderContainerClassName}`}>
+            <Loader size={movieCarouselLoaderHeight} color="#FF529A" className="pi pi-spin" />
           </div>
         )}
       </main>

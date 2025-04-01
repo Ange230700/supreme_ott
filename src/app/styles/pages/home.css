@@ -3,7 +3,7 @@
 /* Import the movie card styles */
 @import "../components/home/hero_slider.css";
 @import "../components/movie_genre_tabs_container.css";
-@import "../components/movie_carousel.css";
+@import "../components/home/movie_carousel.css";
 
 @utility header {
   @apply mb-16;
