@@ -8,7 +8,6 @@ import MovieCard from "./MovieCard";
 import movieCarouselResponsiveOptions from "../modules/movieCarouselResponsiveOptions";
 
 export default function MovieCarousel({ movies }) {
-    // Define the itemTemplate function inside the client component.
     const itemTemplate = (movie) => (
         <div className="movie-card-container">
             <MovieCard film={movie} />

@@ -2,6 +2,8 @@
 
 "use client";
 
+import { Loader } from "@deemlol/next-icons";
+import 'primeicons/primeicons.css';
 import HeroSlider from "../components/HeroSlider";
 import MovieCarousel from "../components/MovieCarousel";
 import { useCategories } from "../hooks/useCategories";
@@ -15,7 +17,11 @@ export default function Home() {
   return (
     <>
       <header className="header">
-        <HeroSlider movies={movies} />
+        {movies.length ? <HeroSlider movies={movies} /> : (
+          <div className="flex justify-center items-center h-[80vh]">
+            <Loader size={128} color="#FF529A" className="pi pi-spin" />
+          </div>
+        )}
       </header>
       <MovieGenreTabsContainer categories={categories} />
       <main className="home-page">
@@ -29,7 +35,9 @@ export default function Home() {
             </section>
           ))
         ) : (
-          <p>Loading categories...</p>
+          <div className="flex justify-center items-center h-78">
+            <Loader size={78} color="#FF529A" className="pi pi-spin" />
+          </div>
         )}
       </main>
     </>
