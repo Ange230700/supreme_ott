@@ -35,7 +35,7 @@ const MovieCard = ({ film }) => {
             sizes="100%"
             className="object-cover"
             priority={true}
-            onLoadingComplete={handleImageLoad}
+            onLoad={handleImageLoad}
           />
         </div>
         {/* The lock icon container is a sibling with a higher z-index */}

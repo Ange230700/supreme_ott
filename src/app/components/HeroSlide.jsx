@@ -31,7 +31,7 @@ export default function HeroSlide({ movie }) {
         sizes="100vw"
         className="hero-slide-image"
         priority={true}
-        onLoadingComplete={handleImageLoad}
+        onLoad={handleImageLoad}
       />
     </div>
   );
