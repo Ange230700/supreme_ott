@@ -1,7 +1,7 @@
 /* src\app\styles\pages\home.css */
 
 /* Import the movie card styles */
-@import "../components/hero_slider.css";
+@import "../components/home/hero_slider.css";
 @import "../components/movie_genre_tabs_container.css";
 @import "../components/movie_carousel.css";
 
