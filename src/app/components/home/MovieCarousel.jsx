@@ -1,4 +1,4 @@
-// src/app/components/MovieCarousel.jsx
+// src\app\components\home\MovieCarousel.jsx
 
 "use client";
 

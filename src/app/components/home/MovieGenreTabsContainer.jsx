@@ -1,4 +1,4 @@
-// src\app\components\MovieGenreTabsContainer.jsx
+// src\app\components\home\MovieGenreTabsContainer.jsx
 
 "use client";
 

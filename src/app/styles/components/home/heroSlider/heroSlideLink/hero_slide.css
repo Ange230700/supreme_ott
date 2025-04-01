@@ -1,4 +1,4 @@
-/*  src\app\styles\components\hero_slide.css */
+/*  src\app\styles\components\home\heroSlider\heroSlideLink\hero_slide.css */
 
 @utility hero-slide {
   @apply relative w-full h-[80vh] rounded-lg overflow-hidden;

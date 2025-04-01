@@ -1,4 +1,4 @@
-// src\app\components\HeroSlide.jsx
+// src\app\components\home\heroSlider\heroSlideLink\HeroSlide.jsx
 
 "use client";
 
