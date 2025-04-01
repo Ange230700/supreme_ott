@@ -1,6 +1,6 @@
 /* src/app/styles/movie_card.css */
 
-@import "./movie_link.css";
+@import "../../movie_link.css";
 
 @utility lock-container {
     @apply absolute inset-0 flex items-center justify-center z-20;
