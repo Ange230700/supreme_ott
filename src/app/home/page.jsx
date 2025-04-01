@@ -17,7 +17,11 @@ export default function Home() {
   return (
     <>
       <header className="header">
-        <HeroSlider movies={movies} />
+        {movies.length ? <HeroSlider movies={movies} /> : (
+          <div className="flex justify-center items-center h-[80vh]">
+            <Loader size={128} color="#FF529A" className="pi pi-spin" />
+          </div>
+        )}
       </header>
       <MovieGenreTabsContainer categories={categories} />
       <main className="home-page">
