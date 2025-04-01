@@ -1,4 +1,4 @@
-// src\app\components\HeroSlide.jsx
+// src\app\components\home\heroSlider\heroSlideLink\HeroSlide.jsx
 
 "use client";
 
@@ -14,13 +14,10 @@ export default function HeroSlide({ movie }) {
     setIsLoaded(true);
   };
 
-  const imageUrl = movie.cover_url;
-
   return (
-    <div className="hero-slide relative">
-      {/* Loader overlay shown until image is loaded */}
+    <div className="hero-slide">
       {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center z-30 bg-gray-200">
+        <div className="hero-slide-loader-container">
           <Loader size={128} color="#FF529A" className="pi pi-spin" />
         </div>
       )}
@@ -31,7 +28,7 @@ export default function HeroSlide({ movie }) {
         sizes="100vw"
         className="hero-slide-image"
         priority={true}
-        onLoadingComplete={handleImageLoad}
+        onLoad={handleImageLoad}
       />
     </div>
   );

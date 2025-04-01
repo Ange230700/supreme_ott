@@ -1,4 +1,4 @@
-// src/app/components/MovieCard.jsx
+// src\app\components\home\movieCarousel\MovieCard.jsx
 
 "use client";
 
@@ -20,14 +20,12 @@ const MovieCard = ({ film }) => {
   return (
     <Link href={`/movies/${film.id}`} className="movie-link">
       <div className="movie-slide relative">
-        {/* Loader overlay shown until image is loaded */}
         {!isLoaded && (
-          <div className="absolute inset-0 flex items-center justify-center z-30 bg-gray-200">
+          <div className="movie-slide-loader-container">
             <Loader size={78} color="#FF529A" className="pi pi-spin" />
           </div>
         )}
-        {/* Wrap the image in its own container and apply the blur there */}
-        <div className={`absolute inset-0 ${blurClass}`}>
+        <div className={`picture-container ${blurClass}`}>
           <Image
             src={film.miniature_url}
             alt={film.title}
@@ -35,10 +33,9 @@ const MovieCard = ({ film }) => {
             sizes="100%"
             className="object-cover"
             priority={true}
-            onLoadingComplete={handleImageLoad}
+            onLoad={handleImageLoad}
           />
         </div>
-        {/* The lock icon container is a sibling with a higher z-index */}
         {!film.IsAvailable && (
           <div className="lock-container">
             <Lock size={60} color="#FF529A" />

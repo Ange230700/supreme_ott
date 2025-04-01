@@ -1,0 +1,13 @@
+/*  src\app\styles\components\home\heroSlider\heroSlideLink\hero_slide.css */
+
+@utility hero-slide {
+  @apply relative w-full h-[80vh] rounded-lg overflow-hidden;
+}
+
+@utility hero-slide-loader-container {
+  @apply absolute inset-0 flex items-center justify-center z-30 bg-gray-200;
+}
+
+@utility hero-slide-image {
+  @apply object-cover object-top;
+}

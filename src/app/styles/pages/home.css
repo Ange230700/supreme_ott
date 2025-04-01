@@ -1,17 +1,20 @@
 /* src\app\styles\pages\home.css */
 
 /* Import the movie card styles */
-@import "../components/hero_slider.css";
-@import "../components/movie_genre_tabs_container.css";
-@import "../components/movie_carousel.css";
-
-/* Home page utilities */
-@utility home-page {
-  @apply w-full h-full flex flex-col justify-between overflow-x-hidden flex-1;
-}
+@import "../components/home/hero_slider.css";
+@import "../components/home/movie_genre_tabs_container.css";
+@import "../components/home/movie_carousel.css";
 
 @utility header {
   @apply mb-16;
+}
+
+@utility hero-slider-loader-container {
+  @apply flex justify-center items-center h-[80vh];
+}
+
+@utility home-page {
+  @apply w-full h-full flex flex-col justify-between overflow-x-hidden flex-1;
 }
 
 @utility main-heading {
@@ -24,4 +27,8 @@
 
 @utility sub-heading-category {
   @apply text-xl font-semibold mb-2;
+}
+
+@utility movie-carousel-loader-container {
+  @apply flex justify-center items-center;
 }

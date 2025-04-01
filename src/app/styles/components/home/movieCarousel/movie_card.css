@@ -1,0 +1,7 @@
+/* src\app\styles\components\home\movieCarousel\movie_card.css */
+
+@import "./movieCard/movie_link.css";
+
+@utility lock-container {
+    @apply absolute inset-0 flex items-center justify-center z-20;
+}

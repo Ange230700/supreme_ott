@@ -1,0 +1,7 @@
+/* src\app\styles\components\home\movie_carousel.css */
+
+@import "./movieCarousel/movie_card.css";
+
+@utility movie-card-container {
+    @apply flex justify-center items-center;
+}

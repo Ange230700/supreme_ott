@@ -1,10 +1,10 @@
-// src\app\components\HeroSlideLink.jsx
+// src\app\components\home\heroSlider\HeroSlideLink.jsx
 
 "use client";
 
 import Link from "next/link";
 import PropTypes from "prop-types";
-import HeroSlide from "./HeroSlide";
+import HeroSlide from "./heroSlideLink/HeroSlide";
 
 export default function HeroSlideLink({ movie }) {
   return (

@@ -1,26 +1,20 @@
-// src/app/components/MovieCarousel.jsx
+// src\app\components\home\MovieCarousel.jsx
 
 "use client";
 
 import PropTypes from "prop-types";
 import { Carousel } from "primereact/carousel";
-import MovieCard from "./MovieCard";
-import movieCarouselResponsiveOptions from "../modules/movieCarouselResponsiveOptions";
+import movieCarouselResponsiveOptions from "../../modules/movieCarouselResponsiveOptions";
+import generateMovieCarouselItemTemplate from "../../modules/generateMovieCarouselItemTemplate";
 
 export default function MovieCarousel({ movies }) {
-    const itemTemplate = (movie) => (
-        <div className="movie-card-container">
-            <MovieCard film={movie} />
-        </div>
-    );
-
     return (
         <Carousel
             value={movies}
             numVisible={5}
             numScroll={1}
             responsiveOptions={movieCarouselResponsiveOptions}
-            itemTemplate={itemTemplate}
+            itemTemplate={generateMovieCarouselItemTemplate}
             circular
             autoplayInterval={15000}
             className="custom-carousel"

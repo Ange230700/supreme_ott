@@ -1,0 +1,13 @@
+/* src\app\styles\components\home\movieCarousel\movieCard\movieLink\movie_slide.css */
+
+@utility movie-slide {
+  @apply relative h-64 w-48 rounded-md overflow-hidden transition-transform duration-200 ease-in-out;
+}
+
+@utility movie-slide-requiring-registration {
+  @apply filter blur-sm;
+}
+
+@utility picture-container {
+  @apply absolute inset-0;
+}

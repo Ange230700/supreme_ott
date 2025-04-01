@@ -1,23 +1,18 @@
-// src\app\components\HeroSlider.jsx
+// src\app\components\home\HeroSlider.jsx
 
 "use client";
 
 import PropTypes from "prop-types";
 import { Carousel } from "primereact/carousel";
-import HeroSlideLink from "./HeroSlideLink";
-import heroSliderResponsiveOptions from "../modules/heroSliderResponsiveOptions";
+import heroSliderResponsiveOptions from "../../modules/heroSliderResponsiveOptions";
+import generateHeroSliderItemTemplate from "../../modules/generateHeroSliderItemTemplate";
 
 export default function HeroSlider({ movies }) {
-  // Filter out only available movies
   const availableMovies = movies.filter((movie) => movie.IsAvailable);
-
-  // Define a template to render each movie slide.
-  const itemTemplate = (movie) => <HeroSlideLink movie={movie} />;
-
   return (
     <Carousel
       value={availableMovies}
-      itemTemplate={itemTemplate}
+      itemTemplate={generateHeroSliderItemTemplate}
       circular
       autoplayInterval={10000}
       responsiveOptions={heroSliderResponsiveOptions}
