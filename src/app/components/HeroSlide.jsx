@@ -14,11 +14,8 @@ export default function HeroSlide({ movie }) {
     setIsLoaded(true);
   };
 
-  const imageUrl = movie.cover_url;
-
   return (
     <div className="hero-slide relative">
-      {/* Loader overlay shown until image is loaded */}
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center z-30 bg-gray-200">
           <Loader size={128} color="#FF529A" className="pi pi-spin" />

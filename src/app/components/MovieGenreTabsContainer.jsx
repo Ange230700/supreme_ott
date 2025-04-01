@@ -4,23 +4,17 @@
 
 import PropTypes from "prop-types";
 import { Carousel } from "primereact/carousel";
-import MovieGenreTab from "./MovieGenreTab";
 import movieGenreTabsResponsiveOptions from "../modules/movieGenreTabsResponsiveOptions";
+import generateMovieGenreTabsContainerItemTemplate from "../modules/generateMovieGenreTabsContainerItemTemplate";
 
 export default function MovieGenreTabsContainer({ categories }) {
-    const itemTemplate = (category) => (
-        <div className="movie-genre-tab-container">
-            <MovieGenreTab category={category} />
-        </div>
-    );
-
     return (
         <Carousel
             value={categories}
             numVisible={13}
             numScroll={1}
             responsiveOptions={movieGenreTabsResponsiveOptions}
-            itemTemplate={itemTemplate}
+            itemTemplate={generateMovieGenreTabsContainerItemTemplate}
             circular
             className="genre-carousel"
         />
