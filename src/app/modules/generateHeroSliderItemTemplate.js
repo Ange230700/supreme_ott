@@ -1,6 +1,6 @@
 // src\app\modules\generateHeroSliderItemTemplate.js
 
-import HeroSlideLink from "../components/HeroSlideLink";
+import HeroSlideLink from "../components/home/heroSlider/HeroSlideLink";
 
 const generateHeroSliderItemTemplate = (movie) => (
   <HeroSlideLink movie={movie} />

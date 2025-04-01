@@ -4,7 +4,7 @@
 
 import Link from "next/link";
 import PropTypes from "prop-types";
-import HeroSlide from "./home/heroSlider/HeroSlide";
+import HeroSlide from "./heroSlideLink/HeroSlide";
 
 export default function HeroSlideLink({ movie }) {
   return (
