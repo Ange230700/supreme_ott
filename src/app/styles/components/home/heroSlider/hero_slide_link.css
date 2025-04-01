@@ -1,6 +1,6 @@
 /* src\app\styles\components\hero_slide_link.css */
 
-@import "./hero_slide.css";
+@import "./heroSlideLink/hero_slide.css";
 
 @utility hero-slide-link {
   @apply block no-underline transition-transform duration-300 hover:scale-95;
