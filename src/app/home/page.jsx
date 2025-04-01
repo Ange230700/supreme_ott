@@ -2,6 +2,8 @@
 
 "use client";
 
+import { Loader } from "@deemlol/next-icons";
+import 'primeicons/primeicons.css';
 import HeroSlider from "../components/HeroSlider";
 import MovieCarousel from "../components/MovieCarousel";
 import { useCategories } from "../hooks/useCategories";
@@ -29,7 +31,9 @@ export default function Home() {
             </section>
           ))
         ) : (
-          <p>Loading categories...</p>
+          <div className="flex justify-center items-center h-78">
+            <Loader size={78} color="#FF529A" className="pi pi-spin" />
+          </div>
         )}
       </main>
     </>
