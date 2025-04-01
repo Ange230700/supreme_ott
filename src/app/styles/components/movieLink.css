@@ -1,5 +1,0 @@
-/* src\app\styles\components\movieLink.css */
-
-@utility movie-link {
-    @apply relative inline-flex;
-}
