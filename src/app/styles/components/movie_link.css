@@ -5,3 +5,7 @@
 @utility movie-link {
   @apply relative inline-flex transition-transform duration-300 hover:scale-95;
 }
+
+@utility movie-slide-loader-container {
+  @apply absolute inset-0 flex items-center justify-center z-30 bg-gray-200;
+}

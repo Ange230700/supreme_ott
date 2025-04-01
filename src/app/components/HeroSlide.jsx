@@ -15,9 +15,9 @@ export default function HeroSlide({ movie }) {
   };
 
   return (
-    <div className="hero-slide relative">
+    <div className="hero-slide">
       {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center z-30 bg-gray-200">
+        <div className="hero-slide-loader-container">
           <Loader size={128} color="#FF529A" className="pi pi-spin" />
         </div>
       )}

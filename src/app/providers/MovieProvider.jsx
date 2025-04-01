@@ -5,6 +5,7 @@
 import axios from "axios";
 import { useState, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
+
 import { MovieContext } from "../contexts/MovieContext";
 
 export function MovieProvider({ children }) {

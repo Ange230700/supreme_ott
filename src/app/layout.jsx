@@ -1,6 +1,7 @@
 // src\app\layout.jsx
 
 import PropTypes from "prop-types";
+
 import NavBarDesktop from "./components/NavBarDesktop";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -21,7 +22,7 @@ export default function RootLayout({ children }) {
         style={{ fontFamily: '"Gabarito", sans-serif' }}
         className="antialiased body"
       >
-        <div className="hidden md:block">
+        <div className="navbar-desktop-container">
           <NavBarDesktop />
         </div>
         <CategoryProvider>
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
           </MovieProvider>
         </CategoryProvider>
         <Footer />
-        <div className="md:hidden">
+        <div className="navbar-container">
           <NavBar />
         </div>
       </body>

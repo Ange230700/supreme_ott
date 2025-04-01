@@ -4,6 +4,7 @@
 
 import { Loader } from "@deemlol/next-icons";
 import 'primeicons/primeicons.css';
+
 import HeroSlider from "../components/HeroSlider";
 import MovieCarousel from "../components/MovieCarousel";
 import { useCategories } from "../hooks/useCategories";
@@ -13,12 +14,12 @@ import MovieGenreTabsContainer from "../components/MovieGenreTabsContainer";
 export default function Home() {
   const { movies } = useMovies();
   const { categories, categoriesWithMovies } = useCategories();
-
+  const movieCarouselLoaderContainerHeight = 78;
   return (
     <>
       <header className="header">
         {movies.length ? <HeroSlider movies={movies} /> : (
-          <div className="flex justify-center items-center h-[80vh]">
+          <div className="hero-slider-loader-container">
             <Loader size={128} color="#FF529A" className="pi pi-spin" />
           </div>
         )}
@@ -35,8 +36,8 @@ export default function Home() {
             </section>
           ))
         ) : (
-          <div className="flex justify-center items-center h-78">
-            <Loader size={78} color="#FF529A" className="pi pi-spin" />
+          <div className={`movie-carousel-loader-container h-${movieCarouselLoaderContainerHeight}`}>
+            <Loader size={movieCarouselLoaderContainerHeight} color="#FF529A" className="pi pi-spin" />
           </div>
         )}
       </main>

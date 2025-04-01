@@ -40,6 +40,14 @@
   @apply px-10;
 }
 
+@utility navbar-desktop-container {
+  @apply hidden md:block;
+}
+
+@utility navbar-container {
+  @apply md:hidden;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
