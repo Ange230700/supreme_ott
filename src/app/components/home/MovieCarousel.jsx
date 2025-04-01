@@ -4,8 +4,8 @@
 
 import PropTypes from "prop-types";
 import { Carousel } from "primereact/carousel";
-import movieCarouselResponsiveOptions from "../modules/movieCarouselResponsiveOptions";
-import generateMovieCarouselItemTemplate from "../modules/generateMovieCarouselItemTemplate";
+import movieCarouselResponsiveOptions from "../../modules/movieCarouselResponsiveOptions";
+import generateMovieCarouselItemTemplate from "../../modules/generateMovieCarouselItemTemplate";
 
 export default function MovieCarousel({ movies }) {
     return (

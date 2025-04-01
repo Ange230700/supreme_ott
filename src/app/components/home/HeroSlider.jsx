@@ -4,8 +4,8 @@
 
 import PropTypes from "prop-types";
 import { Carousel } from "primereact/carousel";
-import heroSliderResponsiveOptions from "../modules/heroSliderResponsiveOptions";
-import generateHeroSliderItemTemplate from "../modules/generateHeroSliderItemTemplate";
+import heroSliderResponsiveOptions from "../../modules/heroSliderResponsiveOptions";
+import generateHeroSliderItemTemplate from "../../modules/generateHeroSliderItemTemplate";
 
 export default function HeroSlider({ movies }) {
   const availableMovies = movies.filter((movie) => movie.IsAvailable);
