@@ -41,7 +41,7 @@
 }
 
 @utility navbar-desktop-container {
-  @apply hidden md:block;
+  @apply block;
 }
 
 @utility navbar-container {
