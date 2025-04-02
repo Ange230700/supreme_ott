@@ -27,9 +27,9 @@ export default function RootLayout({ children }) {
         </div>
         <CategoryProvider>
           <MovieProvider>
-            <div style={{ paddingBottom: "4rem" }}>
+            <main className="main">
               {children}
-            </div>
+            </main>
           </MovieProvider>
         </CategoryProvider>
         <Footer />

@@ -2,7 +2,7 @@
 
 export default function Login() {
   return (
-      <main className="login-page">Login page</main>
+      <section className="login-page">Login page</section>
   )
 }
 

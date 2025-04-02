@@ -37,11 +37,15 @@
 }
 
 @utility body {
-  @apply px-10;
+  @apply px-10 flex flex-col min-h-screen  pb-20 md:pb-0;
 }
 
 @utility navbar-desktop-container {
   @apply block;
+}
+
+@utility main {
+  @apply flex-grow pb-4;
 }
 
 @utility navbar-container {

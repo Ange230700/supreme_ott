@@ -4,6 +4,6 @@
 
 export default function Search() {
     return (
-        <main className="search-page">Search page</main>
+        <section className="search-page">Search page</section>
     )
 }
