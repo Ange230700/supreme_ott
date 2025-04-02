@@ -45,7 +45,7 @@ export default function NavBar() {
           </Link>
         </div>
         <div className="nav-icon-container">
-          <Link href="/profil" className="div-icon">
+          <Link href="/login" className="div-icon">
             <User size={24} color="#FFFFFF" />
           </Link>
         </div>

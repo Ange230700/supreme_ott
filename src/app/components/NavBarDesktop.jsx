@@ -39,7 +39,7 @@ export default function NavBarDesktop() {
                         <ToggleSwitch user={user} />
                     </div>
                 )} */}
-                <Link href="/" className="link">
+                <Link href="/login" className="link">
                     {/* {user ? (
                         <Image
                             className="icon rounded-full"
