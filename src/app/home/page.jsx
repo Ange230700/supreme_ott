@@ -26,7 +26,7 @@ export default function Home() {
         )}
       </header>
       <MovieGenreTabsContainer categories={categories} />
-      <main className="home-page">
+      <section className="home-page">
         {categoriesWithMovies.length ? (
           categoriesWithMovies.map((category) => (
             <section key={category.id} className="movies-display-section">
@@ -41,7 +41,7 @@ export default function Home() {
             <Loader size={movieCarouselLoaderHeight} color="#FF529A" className="pi pi-spin" />
           </div>
         )}
-      </main>
+      </section>
     </>
   );
 }
