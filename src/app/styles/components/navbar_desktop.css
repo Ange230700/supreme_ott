@@ -1,7 +1,7 @@
 /* src\app\styles\components\navbarDesktop.css */
 
 @utility navbar-desktop {
-  @apply p-4 hidden md:flex items-center justify-between;
+  @apply flex items-center justify-center md:justify-between p-4;
 }
 
 @utility logo-container {
@@ -13,7 +13,7 @@
 }
 
 @utility links-container {
-  @apply flex items-center space-x-4;
+  @apply hidden md:flex items-center space-x-4;
 }
 
 @utility link {
