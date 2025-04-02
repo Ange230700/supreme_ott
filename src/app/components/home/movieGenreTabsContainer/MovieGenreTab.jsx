@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function MovieGenreTab({ category }) {
     return (
-        <Link href={`/category/${category.id}`} className="movie-genre">
+        <Link href={`/pages/category/${category.id}`} className="movie-genre">
             {category.name}
         </Link>
     );

@@ -1,6 +1,6 @@
 // src\app\page.jsx
 
-import Home from "./home/page";
+import Home from "./pages/home/page";
 
 export default async function App() {
   return <Home />;

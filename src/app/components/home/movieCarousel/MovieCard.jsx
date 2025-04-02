@@ -18,7 +18,7 @@ const MovieCard = ({ film }) => {
   }
 
   return (
-    <Link href={`/movies/${film.id}`} className="movie-link">
+    <Link href={`/pages/movies/${film.id}`} className="movie-link">
       <div className="movie-slide relative">
         {!isLoaded && (
           <div className="movie-slide-loader-container">

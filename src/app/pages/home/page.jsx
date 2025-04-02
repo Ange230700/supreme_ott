@@ -5,11 +5,11 @@
 import { Loader } from "@deemlol/next-icons";
 import 'primeicons/primeicons.css';
 
-import HeroSlider from "../components/home/HeroSlider";
-import MovieCarousel from "../components/home/MovieCarousel";
-import { useCategories } from "../hooks/useCategories";
-import { useMovies } from "../hooks/useMovies";
-import MovieGenreTabsContainer from "../components/home/MovieGenreTabsContainer";
+import HeroSlider from "../../components/home/HeroSlider";
+import MovieCarousel from "../../components/home/MovieCarousel";
+import { useCategories } from "../../hooks/useCategories";
+import { useMovies } from "../../hooks/useMovies";
+import MovieGenreTabsContainer from "../../components/home/MovieGenreTabsContainer";
 
 export default function Home() {
   const { movies } = useMovies();
@@ -37,7 +37,7 @@ export default function Home() {
             </section>
           ))
         ) : (
-            <div className={`movie-carousel-loader-container ${movieCarouselLoaderContainerClassName}`}>
+          <div className={`movie-carousel-loader-container ${movieCarouselLoaderContainerClassName}`}>
             <Loader size={movieCarouselLoaderHeight} color="#FF529A" className="pi pi-spin" />
           </div>
         )}

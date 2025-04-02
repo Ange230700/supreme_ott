@@ -8,7 +8,7 @@ import HeroSlide from "./heroSlideLink/HeroSlide";
 
 export default function HeroSlideLink({ movie }) {
   return (
-    <Link href={`/movies/${movie.id}`} className="hero-slide-link">
+    <Link href={`/pages/movies/${movie.id}`} className="hero-slide-link">
       <HeroSlide movie={movie} />
     </Link>
   );
