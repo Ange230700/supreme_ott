@@ -30,7 +30,7 @@ export default function NavBarDesktop() {
                 />
             </Link>
             <div className="links-container">
-                <Link href="/search" className="link">
+                <Link href="/pages/search" className="link">
                     <p className="link-text">Search</p>
                 </Link>
                 {/* {user?.IsAdmin && (
@@ -39,7 +39,7 @@ export default function NavBarDesktop() {
                         <ToggleSwitch user={user} />
                     </div>
                 )} */}
-                <Link href="/login" className="link">
+                <Link href="/pages/login" className="link">
                     {/* {user ? (
                         <Image
                             className="icon rounded-full"

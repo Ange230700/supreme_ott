@@ -40,12 +40,12 @@ export default function NavBar() {
           </Link>
         </div>
         <div className="nav-icon-container">
-          <Link href="/search" className="div-icon">
+          <Link href="/pages/search" className="div-icon">
             <Search size={24} color="#FFFFFF" />
           </Link>
         </div>
         <div className="nav-icon-container">
-          <Link href="/login" className="div-icon">
+          <Link href="/pages/login" className="div-icon">
             <User size={24} color="#FFFFFF" />
           </Link>
         </div>
