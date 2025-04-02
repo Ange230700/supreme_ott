@@ -8,6 +8,7 @@
 @import "./components/navbar_desktop.css";
 @import "./pages/home.css";
 @import "./pages/search.css";
+@import "./pages/login.css";
 @import "./components/footer.css";
 @import "./components/navbar.css";
 
@@ -49,7 +50,7 @@
 }
 
 @utility main {
-  @apply flex-grow pb-4;
+  @apply flex-grow pb-4 flex flex-col;
 }
 
 @utility navbar-container {

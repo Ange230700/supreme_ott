@@ -6,7 +6,9 @@ import { useState } from "react";
 import axios from "axios";
 import { Eye, EyeOff } from "react-feather";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { InputText } from "primereact/inputtext";
+import { Button } from 'primereact/button';
+import "primeicons/primeicons.css";
 import { useUser } from "@/app/hooks/useUser";
 
 export default function Login() {
@@ -42,47 +44,44 @@ export default function Login() {
   };
 
   return (
-    <div className="loginPage">
+    <div className="login-page">
       <form className="form" onSubmit={handleLogin}>
         <div className="inputs">
-          <div className="inputContainer">
-            <input
-              type="text"
-              className="input"
-              name="email"
-              value={user.email}
-              placeholder="Mail address:"
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="inputContainer">
-            <input
+          <InputText
+            type="email"
+            className="input"
+            name="email"
+            value={user.email}
+            placeholder="Email"
+            onChange={handleInputChange}
+          />
+          <div className="input-container p-inputgroup">
+            <InputText
               type={showPassword ? "text" : "password"}
               name="password"
               value={user.password}
-              className="input"
-              placeholder="Password:"
+              className="input-password"
+              placeholder="Password"
               onChange={handleInputChange}
             />
             <button
               type="button"
+              className="show p-inputgroup-addon"
               onClick={() => setShowPassword((prev) => !prev)}
             >
               {showPassword ? <EyeOff /> : <Eye />}
             </button>
           </div>
           <div className="buttonContainer">
-            <button type="submit" className="connexion">
+            <button type="submit" className="connection">
               Log in
             </button>
           </div>
         </div>
-        <div className="signUpText">
-          <p className="tuNAsPasDeCompte">
+        <div className="sign-up-text">
+          <p className="no-account">
             You don't have an account?{" "}
-            <Link href="/pages/signup">
-              <span className="inscrisToiIci">Sign up here</span>
-            </Link>{" "}
+            <Button label="Sign up here" className="sign-up" onClick={() => router.push("/pages/signup")} />{" "}
             to get access to all the movies.
           </p>
         </div>
