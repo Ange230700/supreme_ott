@@ -2,7 +2,7 @@
 
 import PropTypes from "prop-types";
 
-export default async function MovieDetail({ params }) {
+export default async function MovieDetails({ params }) {
     const { id } = await params;
 
     return (
@@ -13,6 +13,6 @@ export default async function MovieDetail({ params }) {
     );
 }
 
-MovieDetail.propTypes = {
+MovieDetails.propTypes = {
     params: PropTypes.object.isRequired,
 };
