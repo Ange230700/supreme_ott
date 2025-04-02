@@ -17,5 +17,9 @@
 }
 
 @utility search-result-container {
-  @apply self-stretch justify-center flex flex-wrap gap-8 px-6;
+  @apply self-stretch justify-center flex flex-wrap gap-8 px-6 flex-1;
+}
+
+@utility search-result-loader-container {
+  @apply flex justify-center items-center flex-1;
 }
