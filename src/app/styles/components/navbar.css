@@ -1,7 +1,7 @@
 /* src\app\styles\components\navbar.css */
 
 @utility navbar {
-  @apply p-4 md:hidden;
+  @apply p-4 md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[hsla(210,89%,7%,1)];
 }
 
 @utility nav-icon-wrapper {

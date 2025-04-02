@@ -20,19 +20,19 @@ export default function NavBar() {
   // };
 
   // Apply fixed bottom styling when on specific routes (using Tailwind classes)
-  const navBarClasses =
-    pathname &&
-      (pathname.includes("/movies/") ||
-        pathname.includes("/profil") ||
-        pathname.includes("/Parametre") ||
-        pathname.includes("/addvideos") ||
-        pathname.includes("/AjoutAdmin") ||
-        pathname.includes("/EditVideo/"))
-      ? "fixed bottom-0 left-0 right-0 z-50 bg-[hsla(210,89%,7%,1)]"
-      : "";
+  // const navBarClasses =
+  //   pathname &&
+  //     (pathname.includes("/movies/") ||
+  //       pathname.includes("/profil") ||
+  //       pathname.includes("/Parametre") ||
+  //       pathname.includes("/addvideos") ||
+  //       pathname.includes("/AjoutAdmin") ||
+  //       pathname.includes("/EditVideo/"))
+  //     ? "fixed bottom-0 left-0 right-0 z-50 bg-[hsla(210,89%,7%,1)]"
+  //     : "";
 
   return (
-    <nav className={`navbar ${navBarClasses}`}>
+    <nav className={`navbar`}>
       <section className="nav-icon-wrapper">
         <div className="nav-icon-container">
           <Link href="/" className="div-icon">
