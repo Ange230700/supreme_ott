@@ -7,6 +7,7 @@
 
 @import "./components/navbar_desktop.css";
 @import "./pages/home.css";
+@import "./pages/search.css";
 @import "./components/footer.css";
 @import "./components/navbar.css";
 
@@ -27,14 +28,17 @@
   --color-primary: var(--primary-font-color);
   --color-secondary: var(--secondary-font-color);
   --color-neutral: var(--neutral-color);
+  --color-neutral-2: var(--neutral-color-2);
+  --color-neutral-2-faded: var(--neutral-color-2-faded);
+  --color-text-field: var(--text-field-background-color);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--background-color);
     --foreground: var(--neutral-color);
   }
-}
+} */
 
 @utility body {
   @apply px-10 flex flex-col min-h-screen  pb-20 md:pb-0;
@@ -53,6 +57,6 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--background-color);
+  color: var(--neutral-color);
 }
