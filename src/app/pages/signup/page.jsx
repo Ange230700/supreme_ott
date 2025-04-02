@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Eye, EyeOff } from "react-feather";
 import { useRouter } from "next/navigation";
@@ -22,8 +22,6 @@ export default function Signup() {
     });
     const [confirmPassword, setConfirmPassword] = useState("");
     const [emailError, setEmailError] = useState("");
-    const [avatars, setAvatars] = useState([]);
-    const [selectedAvatar, setSelectedAvatar] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -53,18 +51,6 @@ export default function Signup() {
     };
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    const handleAvatarChange = (avatar) => {
-        if (!avatar) {
-            setSelectedAvatar({ avatar_url: "https://avatars.githubusercontent.com/u/97165289" });
-            return;
-        }
-        setSelectedAvatar(avatar);
-        setUser((prevData) => ({
-            ...prevData,
-            avatarId: avatar.id,
-        }));
-    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();

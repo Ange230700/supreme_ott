@@ -38,7 +38,6 @@ export default function Login() {
         router.push("/");
       }
     } catch (err) {
-      toast.error("Incorrect email or password");
       console.error("Incorrect email or password", err);
     }
   };
