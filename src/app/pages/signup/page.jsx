@@ -2,12 +2,13 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import "primeicons/primeicons.css";
+import CustomToast from "@/app/components/CustomToast";
 import { useUser } from "@/app/hooks/useUser";
 import PasswordInput from "@/app/components/login/PasswordInput";
 import RadioGroup from "@/app/components/signup/RadioGroup";
@@ -15,6 +16,7 @@ import RadioGroup from "@/app/components/signup/RadioGroup";
 export default function Signup() {
     const router = useRouter();
     const { updateUser, fetchUser } = useUser();
+    const toast = useRef(null);
 
     const [user, setUser] = useState({
         name: "",
@@ -22,10 +24,9 @@ export default function Signup() {
         naissance: "",
         civility: "",
         password: "",
-        avatarId: "",
+        avatar_url: "",
     });
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [emailError, setEmailError] = useState("");
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -34,7 +35,15 @@ export default function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (user.password !== confirmPassword) return;
+        if (user.password !== confirmPassword) {
+            toast.current.show({
+                severity: "error",
+                summary: "Error",
+                detail: "Passwords do not match",
+                life: 3000,
+            });
+            return;
+        }
 
         try {
             const response = await axios.post(
@@ -47,19 +56,41 @@ export default function Signup() {
                 updateUser(response.data.newUserWithoutPassword);
                 localStorage.setItem("token", response.data.token);
                 fetchUser();
+                toast.current.show({
+                    severity: "success",
+                    summary: "Success",
+                    detail: "Registration successful",
+                    life: 3000,
+                });
                 router.push("/");
             }
         } catch (err) {
-            if (err.response?.status === 400) {
-                setEmailError(err.response.data.message);
-            } else {
-                console.error("Registration failed", err);
-            }
+            const errorDetail =
+                err.response?.data.error ||
+                "Registration failed, please try again.";
+            toast.current.show({
+                severity: "error",
+                summary: "Error",
+                detail: errorDetail,
+                life: 3000,
+            });
+            console.error("Registration failed", err);
         }
     };
 
+    const isFormInvalid =
+        !user.name ||
+        !user.email ||
+        !user.password ||
+        user.password.length < 8 ||
+        user.password !== confirmPassword ||
+        !user.naissance ||
+        !user.civility ||
+        !user.avatar_url;
+
     return (
         <div className="signup-page">
+            <CustomToast ref={toast} />
             <form className="form" onSubmit={handleSubmit}>
                 <div className="inputs">
                     <InputText
@@ -78,7 +109,6 @@ export default function Signup() {
                         placeholder="Email"
                         onChange={handleInputChange}
                     />
-                    {emailError && <p className="error-message">{emailError}</p>}
                     <PasswordInput
                         name="password"
                         value={user.password}
@@ -108,21 +138,23 @@ export default function Signup() {
                         selectedValue={user.civility}
                         onChange={handleInputChange}
                     />
-                    <Button
-                        type="submit"
-                        label="Sign up"
-                        className="connection"
-                        disabled={
-                            !user.name ||
-                            !user.email ||
-                            !user.password ||
-                            user.password.length < 8 ||
-                            user.password !== confirmPassword ||
-                            !user.naissance
-                        }
+                    <InputText
+                        type="text"
+                        className="input"
+                        name="avatar_url"
+                        value={user.avatar_url}
+                        placeholder="Avatar URL"
+                        onChange={handleInputChange}
                     />
+                    <div className="button-container">
+                        <Button
+                            type="submit"
+                            label="Sign up"
+                            className="connection"
+                            disabled={isFormInvalid}
+                        />
+                    </div>
                 </div>
-
                 <div className="sign-up-text">
                     <p>
                         Already have an account?{" "}

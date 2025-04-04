@@ -7,11 +7,11 @@ import jwt from "jsonwebtoken";
 
 export async function POST(request) {
   try {
-    const { name, email, naissance, civility, password, avatarId } =
+    const { name, email, naissance, civility, password, avatar_url } =
       await request.json();
 
     // Validate required fields
-    if (!name || !email || !password || !avatarId || !naissance) {
+    if (!name || !email || !password || !avatar_url || !naissance) {
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 }
@@ -30,6 +30,23 @@ export async function POST(request) {
       );
     }
 
+    // Check if an avatar with the provided URL exists
+    const [existingAvatar] = await pool.query(
+      "SELECT * FROM Avatar WHERE avatar_url = ?",
+      [avatar_url]
+    );
+    let avatarId;
+    if (existingAvatar && existingAvatar.length > 0) {
+      avatarId = existingAvatar[0].id;
+    } else {
+      // Insert new avatar record
+      const [avatarResult] = await pool.query(
+        "INSERT INTO Avatar (avatar_url) VALUES (?)",
+        [avatar_url]
+      );
+      avatarId = avatarResult.insertId;
+    }
+
     // Hash the password
     const hashedPassword = await argon2.hash(password);
 
@@ -43,8 +60,7 @@ export async function POST(request) {
 
     // Retrieve the newly created user along with avatar details
     const [rows] = await pool.query(
-      `SELECT U.id, U.name, U.email, U.naissance, U.civility, U.IsAdmin, U.avatarId,
-              A.avatar_url, A.avatar_filename
+      `SELECT U.id, U.name, U.email, U.naissance, U.civility, U.IsAdmin, U.avatarId, A.avatar_url
        FROM User U
        JOIN Avatar A ON U.avatarId = A.id
        WHERE U.id = ?`,

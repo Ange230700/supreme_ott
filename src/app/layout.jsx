@@ -1,6 +1,7 @@
 // src\app\layout.jsx
 
 import PropTypes from "prop-types";
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 
 import NavBarDesktop from "./components/NavBarDesktop";
 import NavBar from "./components/NavBar";
@@ -26,15 +27,17 @@ export default function RootLayout({ children }) {
         <div className="navbar-desktop-container">
           <NavBarDesktop />
         </div>
-        <UserProvider>
-          <CategoryProvider>
-            <MovieProvider>
-              <main className="main">
-                {children}
-              </main>
-            </MovieProvider>
-          </CategoryProvider>
-        </UserProvider>
+        <PrimeReactProvider>
+          <UserProvider>
+            <CategoryProvider>
+              <MovieProvider>
+                <main className="main">
+                  {children}
+                </main>
+              </MovieProvider>
+            </CategoryProvider>
+          </UserProvider>
+        </PrimeReactProvider>
         <Footer />
         <div className="navbar-container">
           <NavBar />
