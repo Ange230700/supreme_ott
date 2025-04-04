@@ -3,6 +3,7 @@
 "use client";
 
 import { useState } from "react";
+import { Loader } from "@deemlol/next-icons";
 import { useMovies } from "@/app/hooks/useMovies";
 import MovieCard from "@/app/components/home/movieCarousel/MovieCard";
 
@@ -27,17 +28,27 @@ export default function Search() {
                     />
                 </div>
                 <div className="search-result-container">
-                    {searchValue.length > 0
-                        ? movies
-                            .filter((movie) =>
-                                movie.title.toLowerCase().includes(searchValue.toLowerCase())
-                            )
-                            .map((movie) => (
+                    {(() => {
+                        if (movies.length === 0) {
+                            return (
+                                <div className="search-result-loader-container">
+                                    <Loader size={78} color="#FF529A" className="pi pi-spin" />
+                                </div>
+                            );
+                        } else if (searchValue.length > 0) {
+                            return movies
+                                .filter((movie) =>
+                                    movie.title.toLowerCase().includes(searchValue.toLowerCase())
+                                )
+                                .map((movie) => (
+                                    <MovieCard key={movie.id} film={movie} />
+                                ));
+                        } else {
+                            return movies.map((movie) => (
                                 <MovieCard key={movie.id} film={movie} />
-                            ))
-                        : movies.map((movie) => (
-                            <MovieCard key={movie.id} film={movie} />
-                        ))}
+                            ));
+                        }
+                    })()}
                 </div>
             </div>
         </section>

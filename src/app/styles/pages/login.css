@@ -1,0 +1,35 @@
+/* src\app\styles\pages\login.css */
+
+@import "../components/login/password_input.css";
+
+@utility login-page {
+    @apply flex flex-col items-center justify-center flex-1;
+}
+
+@utility form {
+    @apply flex flex-col flex-1 gap-4 justify-center w-full max-w-[550px];
+}
+
+@utility inputs {
+    @apply flex flex-col gap-4 w-full;
+}
+
+@utility input {
+    @apply px-4 rounded-xl w-full h-12 border-0 focus:outline-none bg-text-field text-foreground text-lg placeholder:text-neutral-2-faded focus:ring-1 focus:ring-secondary transition-colors duration-300;
+}
+
+@utility show {
+    @apply px-2 border-1 rounded-r-lg hover:bg-neutral-2-faded;
+}
+
+
+@utility connection {
+    @apply px-4 py-2 rounded-lg bg-primary text-foreground text-lg hover:bg-secondary transition-colors duration-300;
+}
+
+
+@utility sign-up {
+    @apply text-primary hover:text-secondary transition-colors duration-300 underline;
+}
+
+

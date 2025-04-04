@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import "./styles/globals.css";
 import { MovieProvider } from "./providers/MovieProvider";
 import { CategoryProvider } from "./providers/CategoryProvider";
+import { UserProvider } from "./providers/UserProvider";
 
 export const metadata = {
   title: "OTT",
@@ -25,13 +26,15 @@ export default function RootLayout({ children }) {
         <div className="navbar-desktop-container">
           <NavBarDesktop />
         </div>
-        <CategoryProvider>
-          <MovieProvider>
-            <main className="main">
-              {children}
-            </main>
-          </MovieProvider>
-        </CategoryProvider>
+        <UserProvider>
+          <CategoryProvider>
+            <MovieProvider>
+              <main className="main">
+                {children}
+              </main>
+            </MovieProvider>
+          </CategoryProvider>
+        </UserProvider>
         <Footer />
         <div className="navbar-container">
           <NavBar />
