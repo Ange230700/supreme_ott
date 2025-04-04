@@ -4,12 +4,13 @@
 
 import { useState } from "react";
 import axios from "axios";
-import { Eye, EyeOff } from "react-feather";
 import { useRouter } from "next/navigation";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import "primeicons/primeicons.css";
 import { useUser } from "@/app/hooks/useUser";
+import PasswordInput from "@/app/components/login/PasswordInput";
+import RadioGroup from "@/app/components/signup/RadioGroup";
 
 export default function Signup() {
     const router = useRouter();
@@ -25,8 +26,6 @@ export default function Signup() {
     });
     const [confirmPassword, setConfirmPassword] = useState("");
     const [emailError, setEmailError] = useState("");
-    const [showPassword, setShowPassword] = useState(false);
-    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -71,7 +70,6 @@ export default function Signup() {
                         placeholder="Name"
                         onChange={handleInputChange}
                     />
-
                     <InputText
                         type="email"
                         className="input"
@@ -80,43 +78,21 @@ export default function Signup() {
                         placeholder="Email"
                         onChange={handleInputChange}
                     />
-                    {emailError && <p className="errorMessage">{emailError}</p>}
-
-                    <div className="input-container p-inputgroup">
-                        <InputText
-                            type={showPassword ? "text" : "password"}
-                            className="input-password"
-                            name="password"
-                            value={user.password}
-                            placeholder="Password"
-                            onChange={handleInputChange}
-                        />
-                        <button
-                            type="button"
-                            className="show p-inputgroup-addon"
-                            onClick={() => setShowPassword((prev) => !prev)}
-                        >
-                            {showPassword ? <EyeOff /> : <Eye />}
-                        </button>
-                    </div>
-
-                    <div className="input-container p-inputgroup">
-                        <InputText
-                            type={showConfirmPassword ? "text" : "password"}
-                            className="input-password"
-                            value={confirmPassword}
-                            placeholder="Confirm Password"
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                        />
-                        <button
-                            type="button"
-                            className="show p-inputgroup-addon"
-                            onClick={() => setShowConfirmPassword((prev) => !prev)}
-                        >
-                            {showConfirmPassword ? <EyeOff /> : <Eye />}
-                        </button>
-                    </div>
-
+                    {emailError && <p className="error-message">{emailError}</p>}
+                    <PasswordInput
+                        name="password"
+                        value={user.password}
+                        placeholder="Password"
+                        onChange={handleInputChange}
+                        className="input-password"
+                    />
+                    <PasswordInput
+                        name="confirmPassword"
+                        value={confirmPassword}
+                        placeholder="Confirm Password"
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        className="input-password"
+                    />
                     <InputText
                         type="date"
                         className="input"
@@ -126,30 +102,12 @@ export default function Signup() {
                         onChange={handleInputChange}
                         max={new Date().toISOString().split("T")[0]}
                     />
-
-                    <div className="input-container civility">
-                        <label className="radio-label">
-                            <input
-                                type="radio"
-                                name="civility"
-                                value="Madame"
-                                checked={user.civility === "Madame"}
-                                onChange={handleInputChange}
-                            />
-                            Madame{" "}
-                        </label>
-                        <label className="radio-label">
-                            <input
-                                type="radio"
-                                name="civility"
-                                value="Monsieur"
-                                checked={user.civility === "Monsieur"}
-                                onChange={handleInputChange}
-                            />
-                            Monsieur{" "}
-                        </label>
-                    </div>
-
+                    <RadioGroup
+                        name="civility"
+                        options={["Male", "Female"]}
+                        selectedValue={user.civility}
+                        onChange={handleInputChange}
+                    />
                     <Button
                         type="submit"
                         label="Sign up"

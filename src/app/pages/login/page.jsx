@@ -4,16 +4,15 @@
 
 import { useState } from "react";
 import axios from "axios";
-import { Eye, EyeOff } from "react-feather";
 import { useRouter } from "next/navigation";
 import { InputText } from "primereact/inputtext";
 import { Button } from 'primereact/button';
 import "primeicons/primeicons.css";
 import { useUser } from "@/app/hooks/useUser";
+import PasswordInput from "@/app/components/login/PasswordInput";
 
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
-  const [showPassword, setShowPassword] = useState(false);
   const { updateUser } = useUser();
   const router = useRouter();
 
@@ -54,23 +53,13 @@ export default function Login() {
             placeholder="Email"
             onChange={handleInputChange}
           />
-          <div className="input-container p-inputgroup">
-            <InputText
-              type={showPassword ? "text" : "password"}
-              name="password"
-              value={user.password}
-              className="input-password"
-              placeholder="Password"
-              onChange={handleInputChange}
-            />
-            <button
-              type="button"
-              className="show p-inputgroup-addon"
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? <EyeOff /> : <Eye />}
-            </button>
-          </div>
+          <PasswordInput
+            name="password"
+            value={user.password}
+            placeholder="Password"
+            onChange={handleInputChange}
+            className="input-password"
+          />
           <div className="buttonContainer">
             <Button type="submit" label="Log in" className="connection" />
           </div>
