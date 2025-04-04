@@ -24,7 +24,7 @@ export default function Signup() {
         naissance: "",
         civility: "",
         password: "",
-        avatarId: "",
+        avatar_url: "",
     });
     const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -84,7 +84,9 @@ export default function Signup() {
         !user.password ||
         user.password.length < 8 ||
         user.password !== confirmPassword ||
-        !user.naissance;
+        !user.naissance ||
+        !user.civility ||
+        !user.avatar_url;
 
     return (
         <div className="signup-page">
@@ -134,6 +136,14 @@ export default function Signup() {
                         name="civility"
                         options={["Male", "Female"]}
                         selectedValue={user.civility}
+                        onChange={handleInputChange}
+                    />
+                    <InputText
+                        type="text"
+                        className="input"
+                        name="avatar_url"
+                        value={user.avatar_url}
+                        placeholder="Avatar URL"
                         onChange={handleInputChange}
                     />
                     <div className="button-container">
