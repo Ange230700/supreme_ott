@@ -22,6 +22,9 @@
     @apply px-2 border-1 rounded-r-lg hover:bg-neutral-2-faded;
 }
 
+@utility button-container {
+    @apply flex justify-center;
+}
 
 @utility connection {
     @apply px-4 py-2 rounded-lg bg-primary text-foreground text-lg hover:bg-secondary transition-colors duration-300;
