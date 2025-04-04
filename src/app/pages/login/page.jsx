@@ -7,8 +7,8 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { InputText } from "primereact/inputtext";
 import { Button } from 'primereact/button';
-import { Toast } from "primereact/toast";
 import "primeicons/primeicons.css";
+import CustomToast from "@/app/components/CustomToast";
 import { useUser } from "@/app/hooks/useUser";
 import PasswordInput from "@/app/components/login/PasswordInput";
 
@@ -59,7 +59,7 @@ export default function Login() {
 
   return (
     <div className="login-page">
-      <Toast ref={toast} />
+      <CustomToast ref={toast} />
       <form className="form" onSubmit={handleLogin}>
         <div className="inputs">
           <InputText
