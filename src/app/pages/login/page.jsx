@@ -72,15 +72,13 @@ export default function Login() {
             </button>
           </div>
           <div className="buttonContainer">
-            <button type="submit" className="connection">
-              Log in
-            </button>
+            <Button type="submit" label="Log in" className="connection" />
           </div>
         </div>
         <div className="sign-up-text">
           <p className="no-account">
             You don't have an account?{" "}
-            <Button label="Sign up here" className="sign-up" onClick={() => router.push("/pages/signup")} />{" "}
+            <Button type="button" label="Sign up here" className="sign-up" onClick={() => router.push("/pages/signup")} />{" "}
             to get access to all the movies.
           </p>
         </div>

@@ -151,7 +151,8 @@ export default function Signup() {
                     </div>
 
                     <Button
-                        label="Sign Up"
+                        type="submit"
+                        label="Sign up"
                         className="connection"
                         disabled={
                             !user.name ||
@@ -168,6 +169,7 @@ export default function Signup() {
                     <p>
                         Already have an account?{" "}
                         <Button
+                            type="button"
                             label="Log in here"
                             className="sign-up"
                             onClick={() => router.push("/pages/login")}
